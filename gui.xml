@@ -35,8 +35,8 @@
             SkinPPI="$PPI: [color=Color070]96, 144, 192, 240, 288(HD), 360(HD), 432(HD), 576(HD)[/color]" 
             />
 			
-		<const blackFrame="black_pix;black_pix;black_pix;black_pix;;black_pix;black_pix;black_pix;black_pix"/>
-		<const greyFrame="grey_pix;grey_pix;grey_pix;grey_pix;;grey_pix;grey_pix;grey_pix;grey_pix"/>
+	<const blackFrame="black_pix;black_pix;black_pix;black_pix;;black_pix;black_pix;black_pix;black_pix"/>
+	<const greyFrame="grey_pix;grey_pix;grey_pix;grey_pix;;grey_pix;grey_pix;grey_pix;grey_pix"/>
         <const orangeFrame="orange_pix;orange_pix;orange_pix;orange_pix;;orange_pix;orange_pix;orange_pix;orange_pix"/>
         <const greyUnderline=";;;;;;;grey_pix;grey_pix"/>
         <const blackUnderline=";;;;;;;black_pix;black_pix"/>
@@ -47,51 +47,49 @@
         <const darkBackground="1d1d1d_pix;1d1d1d_pix;1d1d1d_pix;1d1d1d_pix;1d1d1d_pix;1d1d1d_pix;1d1d1d_pix;1d1d1d_pix;1d1d1d_pix"/>
         
 				
-		<label fontSize="FontSize130" fontColor="Color200" autoSize="1" urlStyle="[color=Color070]" emailStyle="[color=Color070]" phoneStyle="[color=Color070]" commandStyle="[color=Color070]FontSize110"/>
+	<label fontSize="FontSize130" fontColor="Color200" autoSize="1" urlStyle="[color=Color070]" emailStyle="[color=Color070]" phoneStyle="[color=Color070]" commandStyle="[color=Color070]FontSize110"/>
+	<label id="DownloadingLabel" text="$WaitDownloading" bgColor="Color080" left="50%" top="50%" leftMargin="20pd" rightMargin="20pd" topMargin="20pd" bottomMargin="20pd" autoSize="1" visible="0"/>
 
-		<label id="DownloadingLabel" text="$WaitDownloading" bgColor="Color080" left="50%" top="50%" leftMargin="20pd" rightMargin="20pd" topMargin="20pd" bottomMargin="20pd" autoSize="1" visible="0"/>
-
-		<!-- шаблоны кнопок -->
+	<!-- шаблоны кнопок -->
         <!-- czarny tekst i ciemnoszary nieaktywny -->
-		<button fontSize="20" fontColor="Color200" fontColorDisabled="Color230"/>
+	<button fontSize="20" fontColor="Color200" fontColorDisabled="Color230"/>
 		
         <!-- pod "edit" -->
         <button id="TextButton" leftMargin="4pd" rightMargin="4pd" bottomMargin="4pd" topMargin="4pd" 
 			fontSize="FontSize140" fontColor="Color210" bgColor="Color070" bgColorPressed="Color070"/>
         
         <!-- шаблон кнопок всплывающего меню (в Компьютере) -->		
-		<button id="PopupMenuButton" height="25pd" fontSize="FontSize140" fontColor="Color210" autoSize="enlarge"/>		
+	<button id="PopupMenuButton" height="25pd" fontSize="FontSize140" fontColor="Color210" autoSize="enlarge"/>		
+	<button id="btn01" bgColor="Color020" bgColorDisabled="Color020"/>		
 		
-		<button id="btn01" bgColor="Color020" bgColorDisabled="Color020"/>		
-		
-		<!-- шаблоны кнопок меню -->
-		<button id="PicMenuButton" sourceId="btn01" height="70pd" topMargin="6pd" bottomMargin="6pd" 
+	<!-- шаблоны кнопок меню -->
+	<button id="PicMenuButton" sourceId="btn01" height="70pd" topMargin="6pd" bottomMargin="6pd" 
 			fontSize="FontSize110" bgColorPressed="Color021" wordWrap="1" textPosition="center;bottom" picPosition="center;top" />		
-		<button id="PicMenuSmallButton" sourceId="PicMenuButton" width="90pd" />
+	<button id="PicMenuSmallButton" sourceId="PicMenuButton" width="90pd" />
 		
-		<!-- шаблоны кнопок  Поиск - Адрес -->
-		<button id="PicMenuShortButton" left="1pd" sourceId="btn01" bgColorPressed="Color021" picPosition="center;center" width="30pd" height="30pd"/>	
+	<!-- шаблоны кнопок  Поиск - Адрес -->
+	<button id="PicMenuShortButton" left="1pd" sourceId="btn01" bgColorPressed="Color021" picPosition="center;center" width="30pd" height="30pd"/>	
         
         <!-- шаблоны кнопок  Поиск - zamieniamy ikonki "dalej w prawo" na małą lupkę, bo to jest wyszukiwanie 
         old: 
         <button id="PicMenuLongButton" sourceId="btn01" bgColorPressed="Color021" fontSize="FontSize111" textPosition="left;center" leftMargin="4pd" height="40pd" 
           picNormal="further" picDisabled="further_d" picPosition="right;center"/>
         -->
-		<button id="PicMenuLongButton" sourceId="btn01" bgColorPressed="Color021" fontSize="FontSize111" textPosition="left;center" leftMargin="4pd" height="30pd" 
+	<button id="PicMenuLongButton" sourceId="btn01" bgColorPressed="Color021" fontSize="FontSize111" textPosition="left;center" leftMargin="4pd" height="30pd" 
           picNormal="further_search" picDisabled="further_search_d" picPosition="right;center" bgPics="greyUnderline" />			
 		
-		<!-- шаблоны кнопок быстрого меню -->
-		<button id="QuickMenuCaption" width="170pd" height="30pd" textPosition="center;center"
+	<!-- шаблоны кнопок быстрого меню -->
+	<button id="QuickMenuCaption" width="170pd" height="30pd" textPosition="center;center"
             bgColor="Color040" bgColorPressed="Color040" fontSize="FontSize110" fontColor="Color210" picNormal="close_dialog" picPosition="left;center" bgPics="grey_pix;grey_pix;grey_pix;;;;;;" bgPicsPressed="grey_pix;grey_pix;grey_pix;;;;;;"/>
 
         <!-- <button id="QuickMenuButton" sourceId="PicMenuButton" width="170pd" height="30pd" wordWrap="0"  
-			picPosition="left;center" textPosition="left;center" leftMargin="5pd" layout="hor"/> -->
+	  picPosition="left;center" textPosition="left;center" leftMargin="5pd" layout="hor"/> -->
         
         
-		<button id="QuickMenuButton" sourceId="PicMenuButton" width="170pd" height="30pd" wordWrap="0"  
+	<button id="QuickMenuButton" sourceId="PicMenuButton" width="170pd" height="30pd" wordWrap="0"  
 			picPosition="left;center" textPosition="left;center" leftMargin="5pd" layout="hor"/>
 			
-		<checkBox id="QuickMenuToggle" sourceId="QuickMenuButton"  			
+	<checkBox id="QuickMenuToggle" sourceId="QuickMenuButton"  			
 			bgColorChecked="Color020" fontColorChecked="Color200" bgColorCheckedPressed="Color021"/>
         
 		
@@ -127,7 +125,7 @@
                 />
         
         <!-- <checkBox id="QuickMenuToggle" sourceId="QuickMenuButton"  			
-			bgColorChecked="Color020" fontColorChecked="Color200" bgColorCheckedPressed="Color021"/> -->
+		bgColorChecked="Color020" fontColorChecked="Color200" bgColorCheckedPressed="Color021"/> -->
         
 		<checkBox id="QuickMenuToggle2" width="80pd" height="80pd" 
                 textPosition="left;bottom" picPosition="right;top" leftMargin="5pd" rightMargin="10pd" bottomMargin="5pd" topMargin="15pd" width="80pd" height="80pd"
@@ -150,18 +148,18 @@
                 />
 		
 		<!-- шаблон кнопок в строках списков (редактирование, удалить, вверх, вниз) 
-          | Hintergrund-Vorlage für Aktionsschalter in Listen: Info, Löschen, Editieren, Verschieben | Maße 32pdx32pd
-          |right= 4pd (down) + 32pd (36 up) + 32pd (68 delete) + 32pd (100 edit) Schalter sind dicht beieinander, damit kein langer Text durchkommt -->
+          	| Hintergrund-Vorlage für Aktionsschalter in Listen: Info, Löschen, Editieren, Verschieben | Maße 32pdx32pd
+          	|right= 4pd (down) + 32pd (36 up) + 32pd (68 delete) + 32pd (100 edit) Schalter sind dicht beieinander, damit kein langer Text durchkommt -->
         
 		<button id="ListItemLargeButton" top="50%" width="32pd" height="32pd" picPosition="center;center"/>
 
 		<!-- шаблон кнопок в окне с картой (Меню, Поиск, На карту) -->
-        <!-- klawisze SZUKAJ i MENU na mapie nawigacji -->
+        	<!-- klawisze SZUKAJ i MENU na mapie nawigacji -->
 		<button id="MainTextButton" height="30pd" 
 			bgPics=";;;;panel;;;;" picPosition="center;center"				
 			bgColorPressed="Color031" bgPicsPressed=";;;;;;;;"/>
         
-        <button id="MainTextButton2" height="30pd" 
+        	<button id="MainTextButton2" height="30pd" 
 			bgPics=";;;;panel2;;;;" picPosition="center;center"				
 			bgColorPressed="Color031" bgPicsPressed=";;;;;;;;"/>
 
@@ -169,22 +167,23 @@
 		<button id="TitleButton" left="35pd" right="35pd" top="1pd" height="34pd" autoSize="text" fontColor="Color200" fontSize="FontSize120" textPosition="center;center" rtl="on" />
 		
 		<!-- шаблоны кнопок в меню (ОК, Карта, Назад, Меню) -->
-        <button id="OKButton" right="1pd" top="1pd" width="34pd" height="34pd" picNormal="ok" command="ok" />
+        	<button id="OKButton" right="1pd" top="1pd" width="34pd" height="34pd" picNormal="ok" command="ok" />
 		<button id="ShowMapButton" right="1pd" top="1pd" width="34pd" height="34pd" picNormal="map" command="showMainMap" />
 		<button id="BackButton" left="1pd" top="1pd" width="34pd" height="34pd" picNormal="back" rtlPicture="1" command="goBack"/>
-        <button id="Menu" right="1pd" top="1pd" width="34pd" height="34pd" />
-        <button id="Del" right="1pd" top="1pd" width="34pd" height="34pd" picNormal="del" />
-        <button id="AboutKeysButton" right="35pd"  top="1pd" width="34pd" height="34pd" picNormal="key" command="show(AboutKeysInfo)" />
-        <button id="MenuMore" right="35pd" top="1pd" width="34pd" height="34pd" picNormal="more"/>
-        <button id="PlusButton" right="35pd" top="1pd" width="34pd" height="34pd" picNormal="plus"/>
-        <button id="CloseDialogButton" picPosition="center;center" picNormal="close_dialog" rtlPicture="1"/>
+        	<button id="Menu" right="1pd" top="1pd" width="34pd" height="34pd" />
+        	<button id="Del" right="1pd" top="1pd" width="34pd" height="34pd" picNormal="del" />
+        	<button id="AboutKeysButton" right="35pd"  top="1pd" width="34pd" height="34pd" picNormal="key" command="show(AboutKeysInfo)" />
+        	<button id="MenuMore" right="35pd" top="1pd" width="34pd" height="34pd" picNormal="more"/>
+        	<button id="PlusButton" right="35pd" top="1pd" width="34pd" height="34pd" picNormal="plus"/>
+        	<button id="CloseDialogButton" picPosition="center;center" picNormal="close_dialog" rtlPicture="1"/>
         
-        <!-- шаблоны кнопок в окне с картой (Зум, Наклон карты)
-        <button id="ZoomButton" width="60pd" height="33pd" tags="!auto; !entireRoute"
+        	<!-- шаблоны кнопок в окне с картой (Зум, Наклон карты)
+        	<button id="ZoomButton" width="60pd" height="33pd" tags="!auto; !entireRoute"
 			bgPics=";;;;zoom_pix;;;;"  bgPicsPressed=";;;;zoom_pix_p;;;;" bgPicsDisabled=";;;;zoom_pix_p;;;;"/>
 		<button id="PitchButton" width="30pd" height="30pd" tags="!auto; 3D"
 			bgPics=";;;;zoom_pix;;;;" bgPicsPressed=";;;;zoom_pix_p;;;;" bgPicsDisabled=";;;;zoom_pix_p;;;;"/>
-        -->
+        	-->
+		
 		<button id="ZoomButton" width="60pd" height="33pd" tags="!auto; !entireRoute"
 			bgPics=""  bgPicsPressed="" bgPicsDisabled=""  picPosition="center;center"/>
 		<button id="PitchButton" width="30pd" height="30pd" tags="!auto; 3D"
@@ -193,7 +192,7 @@
         
 	
 		<!-- шаблон надписи в настройках (с нижней чертой) -->
-        <!-- klawisz opcji w ustawieniach interfejsu z czarną kreską na dole -->
+        	<!-- klawisz opcji w ustawieniach interfejsu z czarną kreską na dole -->
 		<button id="MenuLabel" left="3pd" right="3pd" height="40pd" rightMargin="100pd" 
 			autoSize="enlarge" rtl="on" layout="hor" fontColor="Color200" fontSize="FontSize130" 
 			picPosition="left;center" textPosition="left;center" wordWrap="1"
@@ -201,7 +200,7 @@
 			bgPicsPressed=";;;;;;;black_pix;"/>
 	
 		<!-- шаблон надписи в настройках (без нижней черты) -->
-        <!-- klawisz opcji w ustawieniach interfejsu bez czarnej kreski na dole -->
+        	<!-- klawisz opcji w ustawieniach interfejsu bez czarnej kreski na dole -->
 		<button id="MenuLabelWoLine" sourceId="MenuLabel"
 			bgPics=";;;;;;;;" 
 			bgPicsPressed=";;;;;;;"/>
@@ -216,7 +215,7 @@
 			bgPics=";;;;;;;;" 
 			bgPicsPressed=";;;;zoom_pix_p;;;;"/>	
         
-        <checkBox fontColor="Color200" fontColorChecked="Color200" fontSize="FontSize130"/>
+        	<checkBox fontColor="Color200" fontColorChecked="Color200" fontSize="FontSize130"/>
 
 		<checkBox id="UsualCheckBox" autoSize="enlarge" rtl="on"
 				picChecked="cb_on" picUnchecked="cb_off"/>
@@ -250,21 +249,21 @@
 		<group id="SettingsGroup" left="1pd" right="1pd" top="38pd" bottom="1pd"/>
 		
 		<!-- шаблон строки в списках -->
-        <!-- linijki w listach -->
+        	<!-- linijki w listach -->
 		<group id="ListItemGroup" bgPics="list_01;list_02;list_03;list_04;list_05;list_06;list_07;list_08;list_09" height="40pd"/>
 		<group id="LabelListItemGroup" sourceId="ListItemGroup">
 			<label id="Label" right="3pd" left="3pd" fontColor="Color200"/>
 		</group>
 		
 		<!-- шаблон выделенной строки в списках -->
-        <!-- wyselekcjonowane/aktywne linijki w listach -->
+        	<!-- wyselekcjonowane/aktywne linijki w listach -->
 		<group id="ListSelectedItemGroup" bgPics="select_list_01;select_list_02;select_list_03;select_list_04;select_list_05;select_list_06;select_list_07;select_list_08;select_list_09" height="40pd"/>
 		<group id="LabelListSelectedItemGroup" sourceId="ListSelectedItemGroup">
 			<label id="Label" left="3pd" right="3pd" fontColor="Color210"/>
 		</group>
 		
 		<!-- шаблон строки в списках второго уровня-->
-        <!-- linijki w (pod)listach - 2 poziom -->
+        	<!-- linijki w (pod)listach - 2 poziom -->
 		<group id="ListSubItemGroup">
 			<group id="Group" left="20pd" right="1pd" top="0" bottom="1pd" bgColor="Color020"/>
 		</group>
@@ -274,18 +273,18 @@
 			<group id="Group" left="20pd" right="1pd" top="0" bottom="1pd" bgColor="Color070"/>
 		</group>
         
-        <!-- byDMA: шаблон Окно, отображаемое при выполнении длительных задач-->
-        <group id="BusyIndicator" left="50%" top="50%" leftMargin="5pd" rightMargin="5pd" topMargin="5pd" bottomMargin="5pd"
-		bgColor="Color040" bgPics="blackFrame">
-		<picture left="0" top="50%" picture="frame_01; 50; frame_02; 50; frame_03; 50; frame_04; 50; frame_05; 50; frame_06; 50; frame_07; 50; frame_08; 50; frame_09; 50; frame_10; 50; frame_11; 50; frame_12; 50; frame_13; 50; frame_14; 50; frame_15; 50; frame_16; 50; frame_17; 50; frame_18; 50; frame_19; 50; frame_20; 50"/>
-		<label id="Text" left="52pd" top="50%" fontColor="Color210" fontSize="FontSize130" autoSize="1"/>
-	    </group>
+        	<!-- byDMA: шаблон Окно, отображаемое при выполнении длительных задач-->
+        	<group id="BusyIndicator" left="50%" top="50%" leftMargin="5pd" rightMargin="5pd" topMargin="5pd" bottomMargin="5pd"
+			bgColor="Color040" bgPics="blackFrame">
+			<picture left="0" top="50%" picture="frame_01; 50; frame_02; 50; frame_03; 50; frame_04; 50; frame_05; 50; frame_06; 50; frame_07; 50; frame_08; 50; frame_09; 50; frame_10; 50; frame_11; 50; frame_12; 50; frame_13; 50; frame_14; 50; frame_15; 50; frame_16; 50; frame_17; 50; frame_18; 50; frame_19; 50; frame_20; 50"/>
+			<label id="Text" left="52pd" top="50%" fontColor="Color210" fontSize="FontSize130" autoSize="1"/>
+	    	</group>
 
-        <label id="LabelPOI" left="3pd" right="3pd"  wordWrap="1" autoSize="1" FontSize="FontSize110" fontColor="Color210"  top="95%"/>
+        	<label id="LabelPOI" left="3pd" right="3pd"  wordWrap="1" autoSize="1" FontSize="FontSize110" fontColor="Color210"  top="95%"/>
         
-		<include file="gui/addons/AddonListItem.xml"/>
-		<include file="gui/tracks/TrackAppearanceGroup.xml"/>
-		<include file="gui/tracks/TrackRecorderWriteShowParams.xml"/>
+			<include file="gui/addons/AddonListItem.xml"/>
+			<include file="gui/tracks/TrackAppearanceGroup.xml"/>
+			<include file="gui/tracks/TrackRecorderWriteShowParams.xml"/>
 		
              
 		<dialog rtl="on"/>
@@ -324,7 +323,7 @@
 		</dialog>
 		
 		<!-- шаблон окна с подсказкой-->
-        <dialog id="HelpDialog" bgColor="Color020" left="50%" top="50%" width="95%" height="95%">
+        	<dialog id="HelpDialog" bgColor="Color020" left="50%" top="50%" width="95%" height="95%">
 			<label id="Label" left="5pd" right="5pd" top="5pd" wordWrap="1" fontSize="FontSize110"/>
 			<button sourceId="OKButton" top="" bottom="5pd" right="50%"/>
 		</dialog>
@@ -333,7 +332,7 @@
 		<dialog id="MoreMenu" left="50%" top="50%" />
 
 		<!-- шаблон поля с выпадающим списком-->
-        <!-- pole do listy dropdown tekst ma kolor ikon fontColor="Color400" -> #ffba00 -->
+        	<!-- pole do listy dropdown tekst ma kolor ikon fontColor="Color400" -> #ffba00 -->
 		<comboBox bgColor="Color030" bgColorDisabled="Color230" fontSize="FontSize130" fontColor="Color400" leftMargin="4pd" height="20pd" bgPics="greyFrame">
 			<button picNormal="cb_button" rtlPicture="1"/>
 		</comboBox>
@@ -343,33 +342,33 @@
 		</comboBox>
 		
 		<!-- шаблон скролл-бара (бокового) -->
-        <!-- boczny skrollbar - dobry, nie ruszać, szeroki na grube paluchy kierowcy ciężarówki na chińskim tablecie ;-) -->
+        	<!-- boczny skrollbar - dobry, nie ruszać, szeroki na grube paluchy kierowcy ciężarówki na chińskim tablecie ;-) -->
 		<scrollBar minThumbSize="30pd" bgPics=";scroll_01;;;scroll_02;;;scroll_03;">
 			<thumb bgPics=";scroll_b_01;;;scroll_b_02;;;scroll_b_01;"/>
 		</scrollBar>
 		
 		<!-- шаблон бегунка (уровень громкости) -->
-        <!-- suwak siły głosu -->
+        	<!-- suwak siły głosu -->
 		<slider thumbWidth="30pd">
 			<track bgColor="Color230" bgPics="black_pix;black_pix;black_pix;grey_pix;;grey_pix;white_pix;white_pix;white_pix" height="4pd"/>
 			<thumb picNormal="slider_thumb"/>
 		</slider>
 
 		<!-- шаблон поля для ввода текста-->
-        <!-- szablon edycji tekstu oraz pole wyszukiwarki-->
+        	<!-- szablon edycji tekstu oraz pole wyszukiwarki-->
 		<edit left="2pd" height="18pd" leftMargin="3pd" rightMargin="0pd" fontSize="FontSize130" bgColor="Color210"  fontColor="Color030" bgColorDisabled="Color010" fontColorDisabled="Color400" bgPics="orangeUnderline">
 			<button right="0pd" width="20pd" picNormal="clearedit" picPressed="clearedit_p" bgColor="Color010"/>
-            <hint colorActive="Color210" colorInactive="Color230" fontSize="FontSize130" />
-        </edit>		
+            		<hint colorActive="Color210" colorInactive="Color230" fontSize="FontSize130" />
+        	</edit>		
 		
 		<!-- шаблон строки в списках -->
-        <!-- linijki w listach -->
+        	<!-- linijki w listach -->
 		<listBox bgColor="Color030" bgColorSelected="Color070"  fontColor="Color210"
 				leftMargin="1pd" topMargin="1pd" rightMargin="1pd" bottomMargin="1pd"
 				fontColorSelected="Color210" fontSize="FontSize210"/>
 		
 		<!-- шаблон списка с выбором (напр., выбор раскладки клавиатуры) -->
-        <!-- lista wybieralna, np układ klawiatury (dla języków) -->
+        	<!-- lista wybieralna, np układ klawiatury (dla języków) -->
 		<listContainer id="CheckBoxList" bgColor="Color020" left="1pd" right="1pd" top="38pd" bottom="1pd">
 			<item height="40pd">
 				<button left="3pd" top="39pd" right="3pd" bgPics=";;;;;;;black_pix;" bgPicsPressed=";;;;;;;black_pix;"/>
@@ -427,7 +426,7 @@
 		<!-- Шаблон формы с верхней панелью и надписью внизу-->
 		<form id="FormWithText" sourceId="GUIForm">
 			<button left="1pd" right="1pd" top="38pd" bottom="1pd" bgColor="Color020"/>
-            <button right="5pd" bottom="5pd" fontColor="Color240" fontSize="6" />	
+            		<button right="5pd" bottom="5pd" fontColor="Color240" fontSize="6" />	
 		</form>
 		
 		<include file="gui/map/MapForm.xml"/>
@@ -451,7 +450,7 @@
 	</declaration>
 	
 	<include file="gui/AboutBox.xml"/>	
-    <include file="gui/AboutKeysInfo.xml"/>
+    	<include file="gui/AboutKeysInfo.xml"/>
 	<include file="gui/Brand.xml"/>
 	<include file="gui/BusyIndicator.xml"/>
 	<include file="gui/DashboardForm.xml"/>
@@ -503,7 +502,7 @@
 	<include file="gui/search/SearchForm.xml"/>
 	<include file="gui/search/SearchHistoryForm.xml"/>
 	<include file="gui/search/SearchPlaceForm.xml"/>
-    <include file="gui/search/SearchWaypointForm.xml"/>
+    	<include file="gui/search/SearchWaypointForm.xml"/>
 		
 	<ifnot os="iOS; RT">
 		<include file="gui/settings/ContentPathsForm.xml"/>
@@ -514,7 +513,7 @@
 	<include file="gui/settings/MapsForm.xml"/>
 	<include file="gui/settings/NavigationSettingsForm.xml"/>
 	<include file="gui/settings/SettingsForm.xml"/>
-    <include file="gui/settings/Speedcams.xml"/>
+    	<include file="gui/settings/Speedcams.xml"/>
     	
 	<include file="gui/tracks/TrackColorForm.xml"/>
 	<include file="gui/tracks/TrackListForm.xml"/>
@@ -523,7 +522,7 @@
 	<include file="gui/tracks/TrackRecorderForm.xml"/>	
 	<include file="gui/tracks/TrackSettingsForm.xml"/>
     
-    <!--Окна-сообщения с кнопками-->
+    	<!--Окна-сообщения с кнопками-->
 
 	<dialog id="MessageBoxOK" sourceId="MessageBoxOK"/>
 	<dialog id="MessageBoxOKCancel" sourceId="MessageBoxOKCancel"/>
