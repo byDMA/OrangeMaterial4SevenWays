@@ -32,20 +32,20 @@
 		<speedCam type="3" picture="003"/>
 		<speedCam type="4" picture="004"/>
 		<speedCam type="5" picture="005"/>
-        <speedCam type="7" picture="007"/>
+        	<speedCam type="7" picture="007"/>
 		<speedCam type="012" picture="012"/>
 		<speedCam type="013" picture="013"/>
-        <speedCam type="014" picture="014"/>
-        <speedCam type="016" picture="016"/>
-        <speedCam type="040" picture="040"/>
+        	<speedCam type="014" picture="014"/>
+        	<speedCam type="016" picture="016"/>
+        	<speedCam type="040" picture="040"/>
 		<speedCam type="041" picture="041"/>		
-        <speedCam type="051" picture="051"/>
-        <speedCam type="052" picture="052"/>
-        <speedCam type="053" picture="053"/>
-        <speedCam type="054" picture="054"/>
-        <speedCam type="065" picture="065"/>
+        	<speedCam type="051" picture="051"/>
+        	<speedCam type="052" picture="052"/>
+        	<speedCam type="053" picture="053"/>
+        	<speedCam type="054" picture="054"/>
+        	<speedCam type="065" picture="065"/>
 		<speedCam type="068" picture="068"/>
-        <speedCam type="075" picture="075"/>
+        	<speedCam type="075" picture="075"/>
 		<speedCam type="100" picture="100"/>
 		<speedCam type="101" picture="101" showSpeed="1" fontBold="1" leftMargin="20%" rightMargin="25%" topMargin="10%" bottomMargin="37%"/> 
 		<speedCam type="102" picture="102"/>
@@ -54,7 +54,7 @@
 		<speedCam type="105" picture="105"/>
 		<speedCam type="106" picture="106"/>
 		<speedCam type="107" picture="107"/>
-        <speedCam type="127" picture="127"/>
+        	<speedCam type="127" picture="127"/>
 		<speedCam type="192" picture="192"/>
 		<speedCam type="193" picture="193"/>		
 		<speedCam type="194" picture="194"/>
@@ -65,7 +65,7 @@
 		<speedCam type="202" picture="202"/>
 		<speedCam type="203" picture="203"/>
 		<speedCam type="204" picture="204"/>
-        <speedCam type="206" picture="206"/>
+        	<speedCam type="206" picture="206"/>
 		<speedCam type="207" picture="207"/> 
 		<speedCam type="208" picture="208"/>    
 		<speedCam type="209" picture="209"/>    
@@ -85,14 +85,14 @@
 		<speedCam type="237" picture="237"/>
         
         
-        <!-- ######## mySpeedcams (byDMA) ######## -->
+        	<!-- ######## mySpeedcams (byDMA) ######## -->
         
-        <!-- MOP | Raststätte PL -->
-        <speedCam type="2100" picture="2100"  />
-        <!-- "czarny Punkt" tylko PL | "black point" only PL -->
-        <speedCam type="666" picture="666"/>
+        	<!-- MOP | Raststätte PL -->
+        	<speedCam type="2100" picture="2100"  />
+        	<!-- "czarny Punkt" tylko PL | "black point" only PL -->
+        	<speedCam type="666" picture="666"/>
         
-        <!-- ######## end mySpeedcams (byDMA) ######## -->
+        	<!-- ######## end mySpeedcams (byDMA) ######## -->
         
     </speedCams>
 	
