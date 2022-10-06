@@ -26,7 +26,7 @@
 			</group>
 			
 			<!-- Кнопки + и -  -->
-            <button id="ZoomInButtonBg" sourceId="ZoomButton" right="0" bottom="65pd" picNormal="zoom_pitch_background_big" picDisabled="zoom_pitch_background_big" command="zoomIn" tags="!auto; !entireRoute; zoomButtons; !viewTrack"/>
+            		<button id="ZoomInButtonBg" sourceId="ZoomButton" right="0" bottom="65pd" picNormal="zoom_pitch_background_big" picDisabled="zoom_pitch_background_big" command="zoomIn" tags="!auto; !entireRoute; zoomButtons; !viewTrack"/>
 			<button id="ZoomOutButtonBg" sourceId="ZoomButton" right="0" bottom="31pd" picNormal="zoom_pitch_background_big" picDisabled="zoom_pitch_background_big" command="zoomOut" tags="!auto; !entireRoute; zoomButtons; !viewTrack"/>
             
 			<button id="ZoomInButton" sourceId="ZoomButton" right="0" bottom="65pd" picNormal="zoom_in" picDisabled="zoom_in_out" command="zoomIn" tags="!auto; !entireRoute; zoomButtons; !viewTrack"/>
