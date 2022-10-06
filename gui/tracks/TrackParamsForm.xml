@@ -1,0 +1,36 @@
+﻿<gui>
+	
+	<!-- Настройки трека -->
+
+	<form id="TrackParamsForm" sourceId="GUIForm">
+		<button sourceId="OKButton"/>
+		<button sourceId="BackButton"/>
+		<button text="$TrackParams" sourceId="TitleButton" right="75pd"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+
+		<group sourceId="SettingsGroup">
+			<!-- имя трека -->
+			<group top="0pd" left="0" right="2pd" height="50pd" bgColor="Color020">
+				<label left="3pd" right="3pd" top="5pd" text="$TrackName"/>
+				<edit id="FileNameEdit" left="3pd" leftMargin="4pd" top="23pd" right="3pd" height="20pd"/>
+			</group>
+			<!-- настройки трека -->
+			<group sourceId="TrackAppearanceGroup" top="55pd"/>
+		</group>
+
+        <!--- zmieniamy ikone na more, bo dialog --->
+		<button sourceId="Menu" picNormal="more" command="show(More)" right="35pd"/>
+		
+		<!--- дополнительное меню --->
+		<dialog id="More" sourceId="MoreMenu" bgPics="greyFrame">
+			<button sourceId="QuickMenuCaption" top="0" text="$Settings" bgPics="orangeUnderline" command="show(TrackParamsForm);goBack" />
+			<button sourceId="QuickMenuButton" top="30pd" text="$Share" picNormal="share_button" command="share"/>
+			<button sourceId="QuickMenuButton" top="60pd" text="$DeleteTrack" picNormal="delete" command="goBack; delete"/>
+			<button sourceId="QuickMenuButton" top="90pd" text="$Description" picNormal="question" command="show(TrackAppearanceHelp)"/>
+		</dialog>			
+		
+		<dialog id="TrackAppearanceHelp" sourceId="HelpDialog" bgPics="greyFrame">
+			<label id="Label" text="$TrackAppearanceHelp"/>
+		</dialog>
+	</form>
+</gui>

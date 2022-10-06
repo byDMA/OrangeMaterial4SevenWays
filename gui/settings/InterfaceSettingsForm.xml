@@ -1,0 +1,154 @@
+﻿<gui>
+	<!--Опции - Интерфейс (Настройки интерфейса) | Anzeigeeinstellungen | Ustawienia interfejsu użytkownika-->
+
+	<form id="InterfaceSettingsForm" sourceId="GUIForm" >
+		<group sourceId="SettingsGroup">
+			
+			<template id="ResourceCombo" right="0" height="20pd">
+				<dialog sourceId="ListDialog">
+					<listBox id="List" bottom="1pd"/>
+					<button id="Download" sourceId="Menu" picNormal="plus"/>
+                    <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+				</dialog>
+			</template>
+			
+			<!--звук | Gruppe Ton-->			
+            
+			<group left="0pd" right="2pd" height="115pd" top="0pd" bgColor="Color020">
+				<label text="$Sound" left="25pd" width="40pd" top="13pd"/>
+                <!--ikona voice -->	
+                <button id="SoundLabel" top="10pd" left="2pd" picNormal="sound_label"/>
+				<checkBox id="MuteSoundCheck" sourceId="SettingsCheckBoxWoLine" top="0" right="0" left="0"
+						picChecked="cb_off" picUnchecked="cb_on"/>
+                <!--old <slider id="SoundVolumeSlider" left="2pd" top="35pd" right="2pd" height="20pd"/> -->
+				<slider id="SoundVolumeSlider" left="5pd" top="40pd" right="5pd" height="20pd"/>			
+                
+                <!--ikona speaker_voice -->	
+                <button id="SpeakerVoice" top="65pd" left="2pd" picNormal="speaker_voice"/>
+                
+                <!--old <label text="$Scheme:" top="60pd" left="2pd"/> -->	
+				<label text="$Scheme:" top="70pd" left="25pd" wordWrap="1"/>
+                
+                <!--old <comboBox id="SoundCombo" sourceId="ResourceCombo" top="75pd" left="2pd" right="3pd"> -->
+				<comboBox id="SoundCombo" sourceId="ResourceCombo" top="90pd" left="2pd" right="3pd">
+					<dialog>
+						<button sourceId="TitleButton" text="$SelectSoundScheme"/>
+						<button id="Download" command="show(AddonsListForm, sound)" />
+                        
+					</dialog>
+				</comboBox>				
+			</group>
+			
+			<!--скин | Skin-->		
+			<group left="0pd" right="2pd" top="110pd" height="200pd" bgColor="Color020">
+				
+				<button id="SkinChange" top="8pd" left="2pd" picNormal="skin_change"/>
+				<label text="$Skin:" top="10pd" left="25pd" wordWrap="1"/>
+                
+                <comboBox id="SkinCombo" sourceId="ResourceCombo" top="33pd" left="2pd" right="3pd">
+					<dialog>
+						<button sourceId="TitleButton" text="$SelectSkin"/>
+						<button id="Download" command="show(AddonsListForm, skin)"/>
+					</dialog>
+				</comboBox>	
+				
+			<!--день/ночь / Tag/Nacht-->
+                
+                <button id="DayNight" top="58pd" left="2pd" picNormal="day_night"/>
+                <label text="$Mode:" top="60pd" left="25pd" wordWrap="1"/>
+				<comboBox id="DayNightCombo" sourceId="ResourceCombo" top="83pd" left="2pd" right="3pd" >
+					<dialog sourceId="ListDialog">
+						<button sourceId="TitleButton" text="$SelectDayNightMode"/>
+					</dialog>
+				</comboBox>				  
+
+			<!--выбор ppi | PPI Auswahl-->
+                
+                <button id="AspectRatio" top="108pd" left="2pd" picNormal="aspect_ratio"/>
+                <label text="$PPI:" top="112pd" left="25pd" wordWrap="1"/>
+                <comboBox id="PPICombo" sourceId="ResourceCombo" left="2pd" top="133pd" right="3pd">
+					<dialog sourceId="ListDialog">
+						<button sourceId="TitleButton" text="$SelectPPI"/>
+					</dialog>
+				</comboBox>								
+			</group>
+			
+            <!-- Gruppe (gemische Einstellungen) -->
+            
+			<group left="0pd" right="2pd" top="265pd" bgColor="Color020">
+				
+                <!--язык | Sprache-->
+                
+                <button id="LanguageIcon" top="8pd" left="2pd" picNormal="language"/>
+                <label text="Language | $Language:" top="10pd" left="25pd"/>
+				<comboBox id="LanguageCombo" sourceId="ResourceCombo" top="33pd" left="2pd" right="3pd" >
+					<dialog>
+						<button sourceId="TitleButton" text="$SelectLanguage"/>
+						<button id="Download" command="show(AddonsListForm, language)"/>
+					</dialog>
+				</comboBox>
+				
+                                
+                <!-- раскладки клавиатуры | Tastaturbelegung -->
+				
+				<button id="LayoutsButton" sourceId="SettingsButton" text="$SelectLayout" top="50pd" picNormal="keyboard"/>				
+				<button top="50pd" right="3pd" picNormal="further"/>
+                
+                <!--ориентация экрана | Bildschirmorientierung -->
+				<button top="90pd" right="3pd" picNormal="further"/>
+				<button sourceId="SettingsButton" text="$Orientation" top="90pd" picNormal="orient" command="show(OrientationDialog)"/>		
+				
+				<checkBox id="BacklightCheck" sourceId="SettingsCheckBox" text="$HoldBacklight" top="130pd"/>
+				<checkBox id="AutoEditWaypointCheck" sourceId="SettingsCheckBox" text="$AutoEditWaypoint" top="170pd"/>
+				<checkBox id="MatchWordBeginningCheck" sourceId="SettingsCheckBox" text="$MatchWordBeginning" top="210pd"/>
+				<checkBox id="ShowMapAtStartupCheck" sourceId="SettingsCheckBoxWoLine" text="$ShowMapAtStartup" top="250pd"/>	
+				<if os="Android; iOS">			
+					<checkBox id="UseSystemKeyboardCheck" sourceId="SettingsCheckBox2" text="$UseSystemKeyboard" top="290pd"/>	
+				</if>				
+			</group>
+		</group>
+		
+		<!--Выбор раскладки клавиатуры | Auswahl der Tastaturbelegung-->
+		<dialog id="LayoutsDialog" sourceId="OKCancelDialog" >
+				<listContainer id="List" sourceId="CheckBoxList" />
+				<button sourceId="TitleButton" text="$SelectLayout" right="30pd"/>
+                <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+		</dialog>
+
+		<!--Ориентация экрана-->
+		<dialog id="OrientationDialog" sourceId="OKCancelDialog" width="100pd" height="100pd">
+			<menu margin="4pd" bottom="30%" top="" orientation="vert">
+				<template id="OrientationToggle" sourceId="PicMenuShortButton" picPosition="center;center"
+					width="70pd" height="70pd" bgColor="Color010" bgColorPressed="Color021" bgColorChecked="Color020" bgColorCheckedPressed="Color021"/>
+				
+				<checkBox id="OrientationVertCheck" sourceId="OrientationToggle"
+					picUnchecked="orient_cb_vert_off"
+					picChecked="orient_cb_vert_on"
+				/>
+
+				<checkBox id="OrientationHorCheck" sourceId="OrientationToggle"
+					picUnchecked="orient_cb_hor_off"
+					picChecked="orient_cb_hor_on"
+				/>
+
+				<checkBox id="OrientationHorRevCheck" sourceId="OrientationToggle"
+					picUnchecked="orient_cb_hor_rev_off"
+					picChecked="orient_cb_hor_rev_on"
+				/>
+
+				<checkBox id="OrientationVertRevCheck" sourceId="OrientationToggle"
+					picUnchecked="orient_cb_vert_rev_off"
+					picChecked="orient_cb_vert_rev_on"
+				/>
+
+			</menu>
+			<button text="$SelectOrientation" sourceId="TitleButton"/>
+            <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+    </dialog>
+		
+		<button sourceId="OKButton"/>
+		<button sourceId="BackButton"/>
+		<button text="$InterfaceSettings" sourceId="TitleButton"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+	</form>
+</gui>

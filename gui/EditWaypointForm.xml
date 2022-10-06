@@ -1,0 +1,93 @@
+﻿<gui>
+	<!-- Мои места - Изменить (Мое место) -->
+
+	<form id="EditWaypointForm" sourceId="GUIForm">
+		<button sourceId="BackButton"/>
+		<button text="$MyPlace" sourceId="TitleButton" right="70pd"/>
+		<button id="OKButton" sourceId="OKButton"/>	
+		<button id="DelWaypointButton" sourceId="Menu" right="35pd" picNormal="del"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+		<!-- передать на сервер -->		
+		<!--<checkBox id="SendWaypointCheck" text="$NotSendWaypoint|$SendWaypoint" layout="hor" rtl="on" fontSize="FontSize110"
+			bgColor="Color040" bgColorPressed="Color040" bgColorChecked="Color040" bgColorCheckedPressed="Color040"
+			fontColor="Color210" fontColorChecked="Color210"
+			picChecked="" picUnchecked=""
+			right="1pd" left="1pd" top="38pd" height="25pd" command="toggleMapDetails"/>-->	
+
+		<group left="1pd" right="1pd" top="38pd" bottom="1pd" bgColor="Color020">
+			<group left="2pd" right="2pd">
+				<label fontSize="FontSize110" text="$WaypointType:" top="12pd" left="0"/>
+				<!-- выбор типа POI -->
+				<comboBox id="WaypointTypeCombo" left="85pd" right="0" top="4pd" height="30pd">					
+					<dialog sourceId="FormDialog">
+						<button text="$ChangeWaypointType" sourceId="TitleButton"/>	
+                        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+						<listContainer id="List" left="1pd" right="1pd" top="38pd" bottom="1pd" bgColor="Color020">
+							<item width="28pd">
+								<button id="Picture" width="28pd" height="28pd"/>
+							</item>
+							<selectedItem bgColor="Color070">
+								<button id="Picture" width="28pd" height="28pd"/>
+							</selectedItem>
+						</listContainer>
+					</dialog>
+				</comboBox>
+
+				<label fontSize="FontSize110" text="$Title:" top="40pd" left="0"/>
+				<edit id="WaypointTitleEdit" left="85pd" right="0" top="38pd" height="20pd" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210" >
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+				<label fontSize="FontSize110" text="$Description:" top="62pd" left="0"/>
+				<edit id="WaypointDescEdit" left="85pd" right="0" top="62pd" height="40pd" multiline="1" hint="$DescHint" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210">
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+				<label fontSize="FontSize110" text="$Latitude:" top="108pd" left="20pd"/>
+                <button picNormal="LAT" top="105pd" left="0pd" height="20pd" picPosition="left;center" />
+				<edit id="WaypointLatEdit" left="85pd" right="0" top="106pd" height="20pd" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210">
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+				<label fontSize="FontSize110" text="$Longitude:" top="132pd" left="20pd"/>
+                <button picNormal="LON" top="129pd" left="0pd" height="20pd" picPosition="left;center"/>
+				<edit id="WaypointLongEdit" left="85pd" right="0" top="130pd" height="20pd" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210">
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+				<label fontSize="FontSize110" text="$Phone:" top="156pd" left="0"/>
+				<edit id="WaypointPhoneEdit" left="85pd" right="0" top="154pd" height="20pd" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210">
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+				<label fontSize="FontSize110" text="$MobilePhone:" top="180pd" left="0"/>
+				<edit id="WaypointMobilePhoneEdit" left="85pd" right="0" top="178pd" height="20pd" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210">
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+				<label fontSize="FontSize110" text="$Fax:" top="204pd" left="0"/>
+				<edit id="WaypointFaxEdit" left="85pd" right="0" top="202pd" height="20pd" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210">
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+				<label fontSize="FontSize110" text="$Email:" top="228pd" left="0"/>
+				<edit id="WaypointEmailEdit" left="85pd" right="0" top="226pd" height="20pd" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210">
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+				<label fontSize="FontSize110" text="$Web:" top="252pd" left="0"/>
+				<edit id="WaypointWebEdit" left="85pd" right="0" top="250pd" height="20pd" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210">
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+				<label fontSize="FontSize110" text="$Address:" top="276pd" left="0"/>
+				<edit id="WaypointAddressEdit" left="85pd" right="0" top="274pd" multiline="1" height="60pd" bgPics="" bgColor="Color210" bgColorDisabled="Color020" fontColor="Color030" fontColorDisabled="Color210">
+                <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                </edit>
+                
+
+			</group>
+		</group>
+
+	</form>
+</gui>

@@ -1,0 +1,25 @@
+﻿<gui>
+
+	<!--Поиск - Адрес-->
+
+	<form id="SearchAddressForm" sourceId="GUIForm">
+
+		<button sourceId="BackButton"/>
+		<button text="$SearchAddress" sourceId="TitleButton"/>
+		<button id="SearchNextButton" sourceId="ShowMapButton" picNormal="NowGoAdress" command="ok"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+
+		<group top="42pd" bottom="1pd" left="1pd" right="1pd">
+				<button id="SearchAutoCountryButton" sourceId="PicMenuShortButton" picNormal="find_country" top="0" />
+				<button id="SearchAutoCityButton" sourceId="PicMenuShortButton" picNormal="find_city" top="42pd"/>
+				<button id="SearchAutoStreetButton" sourceId="PicMenuShortButton" picNormal="find_street" top="84pd"/>
+				<button id="SearchAutoHouseButton" sourceId="PicMenuShortButton" picNormal="find_house" top="126pd"/>	
+
+				<button id="SearchCountryButton" text="%title [picture=country_DE]" sourceId="PicMenuLongButton" top="0" left="35pd" right="1pd" />
+				<button id="SearchCityButton" sourceId="PicMenuLongButton" top="42pd" left="35pd" right="1pd" />
+				<button id="SearchStreetButton" sourceId="PicMenuLongButton" top="84pd" left="35pd" right="1pd" />
+				<button id="SearchHouseButton" sourceId="PicMenuLongButton" top="126pd" left="35pd" right="1pd"/>
+		</group>
+		
+	</form>
+</gui>

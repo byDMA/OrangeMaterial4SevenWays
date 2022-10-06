@@ -1,0 +1,39 @@
+﻿<gui>
+	<!--Дополнения - Опции - Место хранения-->
+
+	<dialog id="AddonsFolderDialog" sourceId="OKCancelDialog" left="0" right="0" top="0" bottom="0" bgColor="Color010">
+		<button text="$AddonsPath" sourceId="TitleButton"/>
+		<button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+
+		<group left="1pd" right="1pd" top="38pd" bottom="1pd" bgColor="Color020">
+			
+            <label id="Label" text="$SuggestedAddonPaths" left="6pd" right="6pd" top="5pd" wordWrap="1"/>
+                    <listContainer id="List" left="3pd" right="3pd" top="20pd" bottom="35pd">
+                    
+                    <template id="Item">
+                        
+                        <button id="Button" picNormal="disk" top="50%" left="3pd"/>
+			
+                        <label id="Label" text="%title [color=Color231][size=FontSize130]$FreeSpace[/size][/color][color=Color070] %free [/color][color=Color231][size=FontSize130]$FreeOf[/size][/color][color=Color070] %capacity[/color]\n[size=FontSize130]%path[/size]" fontSize="FontSize130" left="37pd" right="0" top="50%" rtl="off"/>
+
+                    </template>
+	     
+                    <item sourceId="LabelListItemGroup; Item" height="40pd"/>
+				
+                    <selectedItem sourceId="LabelListSelectedItemGroup; Item" height="40pd">
+                    <label id="Label" fontColor="Color210" fontSize="FontSize130" left="37pd" right="0" top="50%" rtl="off"/>
+                    
+                    <label id="Label" text="%title  [color=Color210][size=FontSize231]$FreeSpace[/size][/color][color=Color070] %free [/color] [color=Color231][size=FontSize130]$FreeOf[/size][/color][color=Color070] %capacity [/color]\n[color=Color070][size=FontSize130]%path[/size][/color]" fontSize="FontSize130" left="37pd" right="0" top="50%" rtl="off"/>
+                    </selectedItem>
+
+                    </listContainer>
+			<button id="CustomizeButton" text="$CustomizePath" 
+				height="25pd" right="5pd" left="6pd" bottom="6pd" bgColor="Color070" bgColorPressed="Color071" bgColorDisabled="Color084"
+				fontColor="Color210" fontSize="FontSize130" textPosition="center;center"/>	
+		
+		</group>
+		
+		
+	</dialog>
+
+</gui>

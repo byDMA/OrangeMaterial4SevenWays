@@ -1,0 +1,26 @@
+﻿<gui>
+	<!--Дополнения | Erweiterungen-->
+
+	<form id="ContentForm" sourceId="FormWithText">
+		<button sourceId="BackButton"/>
+		<button sourceId="ShowMapButton" />
+		<button sourceId="TitleButton" text="$Addons"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+		<group sourceId="MenuGroup">
+			<menu orientation="hor">
+				<button sourceId="PicMenuSmallButton" picNormal="downloads" text="$AllAddons" command="show(AddonsListForm)" bgPics="greyFrame"/>
+				<button id="LocalAddonsButton" sourceId="PicMenuSmallButton" picNormal="my_downloads; my_downloads_upd" picDisabled="my_downloads_d" text="$MyAddons" command="show(LocalAddonsForm)" state="%addonsUpdate" bgPics="greyFrame" />
+				<button sourceId="PicMenuSmallButton" picNormal="settings_add" text="$Settings" command="show(AddonsSettingsForm)" bgPics="greyFrame"/>				
+				<if os="Android; iOS">
+					<button sourceId="PicMenuSmallButton" picNormal="subscriptions" text="$Products" command="show(ProductsForm)" bgPics="greyFrame"/>
+				</if>
+				<ifnot os="Android; iOS">
+					<button sourceId="PicMenuSmallButton" picNormal="about_add" text="$AboutAddons" command="show(AboutAddonsDialog)" bgPics="greyFrame"/>
+				</ifnot>
+			</menu>
+		</group>
+		<if os="Android; iOS">
+			<button picNormal="i" left="1pd" bottom="1pd" height="34pd" width="34pd"  command="show(AboutAddonsDialog)"/>
+		</if>
+	</form>
+</gui>

@@ -1,0 +1,54 @@
+﻿<gui>
+	<!--Настройка фильтров POI-->
+
+	<form id="POIRulesListForm" sourceId="GUIForm">
+		<button sourceId="OKButton"/>
+		<button sourceId="BackButton"/>
+		<button text="$AdjustFilters" sourceId="TitleButton" right="70pd"/>
+		<button id="AddButton" sourceId="Menu" right="35pd" picNormal="plus"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+
+		<!-- сначала все poi -->       
+        <group top="38pd" height="70pd" left="1pd" right="1pd"  >
+			<button picNormal="poi_label" left="3pd" top="0pd" width="25pd" bgColor="Color040" picPosition="left;center" height="28pd" />
+            <button top="0pd" left="28pd" width="59%" height="28pd"  text="$FirstRuleAction" autoSize="text"  leftMargin="2pd" textPosition="left;center" leftMargin="3pd" fontSize="FontSize220" fontColor="Color210" rtl="on"/>
+			<button id="HideOrShowAllPOIButton"  picNormal="cb_off;cb_on" text="[color=Color230]$Hide[/color]|[color=Color070]$Show[/color]" top="0" right="33pd" width="39%" height="28pd" autosize="text" fontColor="Color210" textPosition="left;center" picPosition="right;center" leftMargin="1pd" bgColor="Color040" fontSize="FontSize220"/>
+            <!-- затем: -->    
+            <label text="$ThenUseRules" left="3pd" top="25pd" fontSize="FontSize221" fontColor="Color071" />
+
+        </group>
+        
+        <button bgPics="greyUnderline" left="2pd" right="2pd" top="83pd" />
+		
+		
+		<!-- список правил -->
+		<listContainer id="List" sourceId="LabelList" left="1pd" right="1pd" top="86pd" bottom="1pd" >
+				
+				<template id="Item" height="40pd">
+					<button id="Label" left="2pd" top="0" bottom="0" rtl="on" bgPics="greyUnderline"/>
+				</template>
+				
+				<item sourceId="Item">
+					<button id="Label" text="[color=Color230][size=FontSize221]%action[/size][/color]\n[color=Color210][size=FontSize220]%title[/size][/color]" />
+				</item>
+				
+				<selectedItem sourceId="Item">
+					<button id="Label" text="[color=Color070][size=FontSize221]%action[/size][/color]\n[color=Color210][size=FontSize220]%title[/size][/color]" />
+				</selectedItem>
+			
+                <!-- right="4pd" + 32pd (Background) + 32pd (Background) = 68pd -> Schalter sind dicht beieinander, damit kein langer Text durchkommt -->
+				<button id="CheckButton" picNormal="cb_off;cb_on" right="2pd" top="0" bottom="4pd" height="100%" width="40pd" showMode="always"/>
+                <!-- right="4pd" + 32pd (Background) + 32pd (Background) = 68pd -> Schalter sind dicht beieinander, damit kein langer Text durchkommt -->
+				<button id="EditButton" sourceId="ListItemLargeButton" right="68pd"
+					bgColor="Color082" bgColorPressed="Color082" picNormal="change" picPosition="center;center" showMode="selected"/>
+                <!-- right="4pd" + 32pd (Background) = 36pd -> Schalter sind dicht beieinander, damit kein langer Text durchkommt -->
+				<button id="UpButton" sourceId="ListItemLargeButton" right="36pd"
+					bgColor="Color082" bgColorPressed="Color082" bgColorDisabled="Color081" picNormal="up" showMode="selected"/>
+					<!-- right="4pd" -->
+				<button id="DownButton" sourceId="ListItemLargeButton" right="4pd"
+					bgColor="Color082" bgColorPressed="Color082" bgColorDisabled="Color081" picNormal="down" showMode="selected"/>
+			
+		</listContainer>		
+		
+	</form>
+</gui>

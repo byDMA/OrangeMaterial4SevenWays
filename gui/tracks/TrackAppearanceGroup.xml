@@ -1,0 +1,55 @@
+﻿<gui>
+	
+	<!--Параметры трека или трек-регистратора (часть 1)-->
+	
+	<template id="TrackAppearanceGroup" left="0" right="0">
+
+	<group left="0pd" right="2pd" top="0pd" height="240pd" bgColor="Color020">
+		<!--раскраска-->
+		<button sourceId="MenuLabel" text="$TrackColorMode:" top="0pd"/>
+		<comboBox id="ColorModeCombo" width="40%" right="3pd" top="10pd" height="20pd">
+			<dialog id="Dialog" sourceId="ListDialog">
+				<button sourceId="TitleButton" text="$TrackColorMode"/>
+                <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+			</dialog>
+		</comboBox>
+		
+		<!--цвет трека-->
+		<button sourceId="MenuLabel" text="$TrackColor:" top="40pd"/>
+		<indicator id="TrackColorIndicator" width="75pd" right="3pd" top="45pd" height="30pd"
+				bgPics=";;;;map_layer;;;;"
+				picTrack="color_track_indicator" picArrow="way_track_indicator"/>
+		
+		<!--толщина линии-->	
+		<button sourceId="MenuLabel" text="$TrackWidth:" top="80pd"/>
+		<comboBox id="WidthCombo" width="40%" right="3pd" top="90pd" height="20pd">
+			<dialog sourceId="FormDialog">
+				<button sourceId="TitleButton" text="$TrackWidth"/>
+                <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+				<listContainer id="List" left="1pd" right="1pd" top="38pd" bottom="1pd" bgColor="Color020">
+					<template id="Item">
+						<label id="LineNumberLabel" left="10pd" top="50%" fontSize="FontSize110" fontColor="Color200"/>
+						<paintbox id="SamplePaintBox" left="40pd" right="10pd" height="40pd" top="50%"/>
+					</template>
+					<item sourceId="Item"/>
+					<selectedItem sourceId="Item" bgColor="Color070"/>
+				</listContainer>
+			</dialog>
+		</comboBox>				
+		
+		<!--масштабировать линию трека-->
+		<checkbox id="ScaleWidthCheck" sourceId="SettingsCheckBox" text="$ScaleTrackWidth" top="120pd"/>
+		<!--показывать направление-->
+		<checkbox id="ShowDirectionCheck" sourceId="SettingsCheckBox" text="$ShowDirection" top="160pd"/>
+		<!--прозрачность-->
+		<label text="$Opacity:" left="3pd" top="213pd"/>
+		<comboBox id="OpacityCombo" width="40%" right="3pd" top="210pd" height="20pd">
+			<dialog id="Dialog" sourceId="ListDialog">
+				<button sourceId="TitleButton" text="$Opacity"/>
+                <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+			</dialog>
+		</comboBox>		
+	</group>
+
+	</template>
+</gui>

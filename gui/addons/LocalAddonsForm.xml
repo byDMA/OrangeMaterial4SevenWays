@@ -1,0 +1,19 @@
+﻿<gui>
+
+	<!--Дополнения - Мои загрузки / local extensions-->
+
+	<form id="LocalAddonsForm" sourceId="GUIForm">
+		<button sourceId="TitleButton" text="$MyAddons" right="70pd"/>
+		<button sourceId="BackButton"/>
+		<button sourceId="ShowMapButton"/>
+		<button sourceId="PlusButton" right="35pd" command="show(AddonsListForm)"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+		
+		<listContainer id="List" left="1pd" top="38pd" bottom="1pd" right="1pd">
+			<item id="Addon" sourceId="LabelListItemGroup; AddonListItem"/>
+			<selectedItem id="Addon" sourceId="LabelListSelectedItemGroup; AddonListItemSelect"/>
+		</listContainer>
+			
+	</form>
+	
+</gui>

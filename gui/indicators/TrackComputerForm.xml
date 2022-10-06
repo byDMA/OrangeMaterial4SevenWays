@@ -1,0 +1,60 @@
+﻿<gui>
+	
+	<!-- Компьютер | Fahrtenbuch/Indicators -->
+	<form id="TrackComputerForm" sourceId="GUIForm">
+		<button sourceId="BackButton"/>
+     	<button sourceId="TitleButton" text="$Computer"/>
+		<button sourceId="ShowMapButton"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+        <button picNormal="sunrise" text="[size=10]%sunRise[/size]" textPosition="right;center" picPosition="left;center" bottom="5pd" width="80pd" left="5pd"/>
+        <button picNormal="sunset" text="[size=10]%sunSet[/size]"  textPosition="left;center" picPosition="right;center" bottom="5pd" width="80pd" right="5pd"/>
+
+        <group left="50%" top="40pd" >
+        
+            <button  left="2pd" fontSize="FontSize120" picNormal="expirationdate_label" text="%localDate"  textPosition="right;center" picPosition="left;center" width="90pd"  />  
+        
+            <indicator sourceId="BaseTimeIndicator" fontSize="FontSize120" fontColor="Color070" right="2pd"  width="50pd" height="26pd" leftMargin="3pd" topMargin="0pd" bottomMargin="6pd" autoSize="text" textPosition="center;center" /> 
+        
+        </group> 
+        
+        
+        
+		<group sourceId="SettingsGroup">
+			<menu margin="2pd" size="2">
+				<trackIndicator id="indicator1" bgPics="greyFrame"/>
+				<trackIndicator id="indicator2" bgPics="greyFrame"/>
+				<trackIndicator id="indicator3" bgPics="greyFrame"/>
+				<trackIndicator id="indicator4" bgPics="greyFrame"/>
+				<trackIndicator id="indicator5" bgPics="greyFrame"/>
+				<trackIndicator id="indicator6" bgPics="greyFrame"/>
+				<trackIndicator id="indicator7" bgPics="greyFrame"/>
+				<trackIndicator id="indicator8" bgPics="greyFrame"/>
+			</menu>
+		</group>
+        
+               
+        <!-- всплывающее меню ToDo - pownno byc na cały ekran, a nie pop up
+        <menu id="TrackIndicatorMenu" orientation="vert" size="1" visible="0" bgPics="greyFrame">
+    
+            <button sourceId="QuickMenuCaption" text="$Indicator" bgPics="grey_pix;grey_pix;grey_pix;;;;orange_pix;orange_pix;orange_pix" command="show(TrackComputerForm);show(TrackComputerForm); goBack"/>
+			<button id="TrackIndicatorMenuChoose" sourceId="QuickMenuButton" text="$ChooseIndicator" picNormal="select_indicator" command="chooseIndicator"/>
+			<button id="TrackIndicatorMenuReset" sourceId="QuickMenuButton" text="$ResetIndicator" picNormal="erase_indicator" command="resetIndicator"/>
+						
+		</menu>
+        
+        -->
+                
+        <menu id="TrackIndicatorMenu" orientation="hor" visible="0" > 
+              <group sourceId="SettingsGroup"  top="0pd"  >    
+                  
+                  <button width="100%" height="100%" top="0" bgPics="zoomBackground" command="show(TrackComputerForm);goBack"/>
+                    <menu margin="5pd" size="1" id="TrackIndicatorMenu" orientation="hor" visible="1"  >
+                        
+                        <button id="TrackIndicatorMenuChoose" sourceId="QuickMenuButton2" FontSize="FontSize110" text="$ChooseIndicator" picNormal="select_indicator" command="chooseIndicator" width="80pd" height="80pd"/>
+                        <button id="TrackIndicatorMenuReset" sourceId="QuickMenuButton2" FontSize="FontSize110" text="$ResetIndicator" picDisabled="erase_indicator_d" picNormal="erase_indicator" command="resetIndicator" width="80pd" height="80pd"/>
+                    </menu>                 
+               </group>          			
+		</menu>
+       
+    </form>
+</gui>

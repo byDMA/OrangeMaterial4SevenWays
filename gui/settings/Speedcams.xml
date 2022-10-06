@@ -1,0 +1,47 @@
+<gui>
+    <!--Опции - Выбор speedcam-->
+    <form id="SpeedcamsForm" sourceId="GUIForm">
+        <button sourceId="BackButton"/>
+        <button sourceId="OKButton"/>
+        <button text="$SpeedcamSelection" sourceId="TitleButton" right="75pd"/>
+        <button sourceId="MenuMore" command="show(MoreSpeedcamMenu)" />
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />        
+        
+        
+        <listContainer id="List" left="1pd" right="1pd" top="38pd" bottom="1pd" bgColor="Color020">	
+			<item >
+				<button id="Button" fontSize="FontSize220" text='[color=Color230]%title[/color]\n{"[picture=maps_local_path_d] [color=Color230][size=FontSize221]%path[/size][/color]";"[picture=folder_content_d] [color=Color230][size=FontSize221]$Addons[/size][/color]"}'
+						picNormal="cb_off" picPosition="right;center" textPosition="left;center" layout="hor" left="3pd" right="3pd" top="50%" rtl="on" autoSize="enlarge"
+						bgPics=";;;;;;;black_pix;"/>
+			</item>
+			<selectedItem >
+				<button id="Button" fontSize="FontSize220" text='%title\n{"[picture=maps_local_path] [color=Color070][size=FontSize221]%path[/size][/color]";"[picture=folder_content] [color=Color070][size=FontSize221]$Addons[/size][/color]"}'
+						picNormal="cb_on" picPosition="right;center" textPosition="left;center" layout="hor" left="3pd" right="3pd" top="50%" rtl="on" autoSize="enlarge" 
+						bgPics=";;;;;;;black_pix;"/>
+			</selectedItem>
+		</listContainer>
+        
+        <!--- дополнительное меню speedcam 
+        <dialog id="MoreSpeedcamMenu" sourceId="MoreMenu" bgPics="greyFrame">
+            <button sourceId="QuickMenuCaption" top="0" text="$Settings" bgPics="orangeUnderline" command="show(Speedcams);goBack"/>
+			<button sourceId="QuickMenuButton" top="30pd" text="$CheckAll" picNormal="check_speedcam_all" command="checkAll"/>
+			<button sourceId="QuickMenuButton" top="60pd" text="$UncheckAll" picNormal="check_speedcam_off" command="uncheckAll"/>
+            <button sourceId="QuickMenuButton" top="90pd" text="$ContentSettings" picNormal="settings_add_menu" command="show(AddonsSettingsForm)" />
+            <if os="Android; iOS ;RT">
+                <button sourceId="QuickMenuButton" id="AddPathButton" top="120pd" text="$AllAddons" picNormal="maps_repo" command="show(AddonsListForm, speedcam)" />
+            </if>
+        </dialog>
+           --->
+        <dialog id="MoreSpeedcamMenu" sourceId="MoreMenu" bgPics="greyFrame">
+            <button sourceId="QuickMenuCaption" top="0" text="$Settings" bgPics="orangeUnderline" command="show(Speedcams);goBack"/>
+			<button sourceId="QuickMenuButton" top="30pd" text="$CheckAll" picNormal="check_speedcam_all" command="checkAll"/>
+			<button sourceId="QuickMenuButton" top="60pd" text="$UncheckAll" picNormal="check_speedcam_off" command="uncheckAll"/>
+            <button sourceId="QuickMenuButton" top="90pd" text="$ContentSettings" picNormal="settings_add_menu" command="show(AddonsSettingsForm)" />
+            <if os="Android; iOS ;RT">
+                <button sourceId="QuickMenuButton" id="AddPathButton" top="120pd" text="$AllAddons" picNormal="maps_repo" command="show(AddonsListForm, speedcam)" />
+            </if>
+        </dialog>
+        
+    </form>
+    
+</gui>

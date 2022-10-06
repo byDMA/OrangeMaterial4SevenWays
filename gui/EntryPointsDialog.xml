@@ -1,0 +1,30 @@
+﻿<gui>
+	<!--Точки подъезда-->
+
+	<dialog id="EntryPointsDialog" sourceId="OKCancelDialog">
+		<label text="$EntryPoints: %title" left="37pd" right="65pd" top="8pd" height="18pd" autoSize="0"/>
+		<button id="InfoButton" picNormal="i" top="1pd" right="41pd" height="34pd" width="34pd"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+
+		<listContainer id="List" left="1pd" right="1pd" top="38pd" bottom="1pd">
+
+			<item sourceId="LabelListItemGroup">
+				<label id="Label" fontSize="FontSize220" text="%title\n[size=FontSize221][color=Color220]%distance[/color][/size]"/>
+			</item>
+      
+			<selectedItem sourceId="LabelListSelectedItemGroup">
+				<label id="Label" fontSize="FontSize220" text="%title\n[size=FontSize221]%distance[/size]"/>
+			</selectedItem>
+      
+			<item id="EmptyTitle" sourceId="LabelListItemGroup">
+				<label id="Label" fontSize="FontSize220" text="[color=Color230]$EntryPointNoTitle[/color]\n[size=FontSize221][color=Color220]%distance[/color][/size]"/>
+			</item>
+      
+			<selectedItem id="EmptyTitle" sourceId="LabelListSelectedItemGroup">
+				<label id="Label" fontSize="FontSize220" text="$EntryPointNoTitle\n[size=FontSize221]%distance[/size]"/>
+			</selectedItem>
+      
+		</listContainer>
+		
+	</dialog>
+</gui>

@@ -1,0 +1,27 @@
+﻿<gui>
+	
+	<!--Параметры трек-регистратора (часть 2)-->
+	
+	<template id="TrackRecorderWriteShowParams" left="0" right="0">
+			
+		<!--срок хранения-->
+		<button sourceId="MenuLabel" text="$TrackRecorderWritePeriod" top="0pd"/>
+        
+		<comboBox id="RecorderWriteCombo" width="40%" right="3pd" top="10pd" height="20pd">
+			<dialog id="Dialog" sourceId="ListDialog">
+				<button sourceId="TitleButton" text="$TrackRecorderWritePeriod"/>
+                <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+			</dialog>
+		</comboBox>
+		<!--период отображения-->
+		<button sourceId="MenuLabelWoLine" text="$TrackRecorderShowPeriod" top="40pd"/>
+        
+		<comboBox id="RecorderShowCombo" width="40%" right="3pd" top="50pd" height="20pd">
+			<dialog id="Dialog" sourceId="ListDialog">
+				<button sourceId="TitleButton" text="$TrackRecorderShowPeriod"/>
+                <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+			</dialog>
+		</comboBox>
+		
+	</template>
+</gui>

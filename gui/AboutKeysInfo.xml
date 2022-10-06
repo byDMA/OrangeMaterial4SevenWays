@@ -1,0 +1,34 @@
+<gui>
+    <dialog id="AboutKeysInfo" left="0" right="0" top="0" bottom="0" sourceId="GUIForm">
+        
+        <button sourceId="BackButton" command="show(AboutBox)"/>
+        <button sourceId="ShowMapButton" />
+        <button text="$AboutKeysInfo" sourceId="TitleButton" />
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+        
+        
+
+        <group id="AboutGroup" left="5pd" right="5pd" top="50pd" bottom="5pd">
+            <label id="AboutLabel" left="10pd" right="10pd" wordWrap="1" rtl="auto"/>
+        </group>
+
+
+        <button sourceId="TitleButton" text="[size=10][color=Color210]$ExpireDateInfo[/color][/size]" left="20pd" right="2pd" top="35pd" textPosition="left;center" autoSize="text" rtl="on" />
+        <button sourceId="TitleButton" text="[size=8][color=Color071]$SerialNumberInfo[/color][/size]" left="20pd" right="2pd" top="50pd" textPosition="left;center" autoSize="text" rtl="on" />
+        
+        <button sourceId="TitleButton" picNormal="expirationdate_label" picPosition="left;center" left="2pd" right="2pd" top="35pd"  />
+        <button sourceId="TitleButton" picNormal="key_label" picPosition="left;center" left="2pd" right="2pd" top="50pd"  />
+
+        <button bgPics="greyUnderline" left="2pd" right="2pd" top="78pd" />
+        
+        <listContainer id="List" left="1pd" right="1pd" top="78pd" bottom="20pd">
+
+            <item sourceId="ListItemGroup" height="60pd" >
+                <button id="Button" text="[color=Color210][size=10]%productId[/size][/color]\n[color=Color070][size=8]%keyInfo[/size][/color]"
+                        picPosition="left;center" textPosition="left;center" layout="hor" left="0" right="0" top="50%" rtl="on" autoSize="enlarge"/>
+            </item>
+
+        </listContainer>
+
+    </dialog>
+</gui>

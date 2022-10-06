@@ -1,0 +1,55 @@
+﻿<gui>
+	<!--Описание дополнения-->
+
+	<form id="AddonDescForm" sourceId="GUIForm">
+    
+		<button sourceId="BackButton"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+	
+		<group top="4pd" left="37pd" right="3pd" height="28pd">
+			<button id="DownloadButton" sourceId="TextButton" text="$Download" 
+					right="0" top="0" height="100%" width="50%" autosize="text" FontSize="FontSize130" bgColorDisabled="Color084"/>
+			<button id="UpdateButton" sourceId="TextButton" text="$UpdateAddon" 
+					right="0" top="0" height="100%" width="33%" autosize="text" FontSize="FontSize130" bgColorDisabled="Color084"/>
+			<button id="DeleteButton" sourceId="TextButton" text="$DeleteAddon" 
+					right="50%" top="0" height="100%" width="33%" autosize="text" FontSize="FontSize130" bgColorDisabled="Color084"/>
+			<button id="PauseButton" sourceId="TextButton" text="$PauseAddon"
+					right="0" top="0" height="100%" width="33%" autosize="text" FontSize="FontSize130" bgColorDisabled="Color084"/>
+			<button id="ResumeButton" sourceId="TextButton" text="$ResumeAddon"
+					right="0" top="0" height="100%" width="33%" autosize="text" FontSize="FontSize130" bgColorDisabled="Color084"/>
+			<button id="RepeatButton" sourceId="TextButton" text="$RepeatAddon"
+					right="0" top="0" height="100%" width="33%" autosize="text" FontSize="FontSize130" bgColorDisabled="Color084"/>
+			<button id="ChooseButton" sourceId="TextButton" text="$ChooseAddon" 
+					left="0" top="0" height="100%" width="33%" autosize="text" FontSize="FontSize130" bgColorDisabled="Color084"/>
+			<button id="CancelDownloadButton" sourceId="TextButton" text="$CancelAddon"
+					right="50%" top="0" height="100%" width="33%" autosize="text" FontSize="FontSize130" bgColorDisabled="Color084"/>
+		</group>
+
+		<group bgColor="Color020" leftMargin="2pd" rightMargin="2pd" topMargin="2pd" bottomMargin="2pd"
+				left="1pd" right="1pd" top="38pd" bottom="1pd">
+			<group left="0" right="0" top="0" height="50pd">
+				<button bgPics=";;;;black_pix;;;;" left="5pd" right="5pd" top="42pd" height="1pd"/>
+				<progressBar right="5pd" top="41pd" left="5pd" height="3pd" value="%progress"
+					bgPics=";;;;;;;;"
+					bgPicsFull=";;;;green_pix;;;;"/>
+				<label text="$LocalAddonDate %localDate" fontSize="6" fontColor="Color200" top="0" left="5pd" right="0" autoSize="1" wordWrap="1"/>
+				<label text="{'$DownloadSize %zipSize'}\n{'$AddonSize %addonSize'}" fontSize="6" fontColor="Color200" top="10pd" left="5pd" right="0" autoSize="1" wordWrap="1"/>
+				<label text="%state{' (%progress%)'}" fontSize="6" fontColor="Color070" top="30pd" left="5pd" right="0" autoSize="1" wordWrap="1"/>
+				
+				<button picNormal="subscribe" bgColorPressed="Color021" leftMargin="3pd" topMargin="3pd" bottomMargin="3pd" rightMargin="3pd"
+					top="0" right="10pd" text="$Purchase" fontSize="6" fontColor="Color200" tags="products" command="showProducts"/>
+				
+				<button id="PlaySoundButton" picNormal="listen" bgColorPressed="Color021" leftMargin="3pd" topMargin="3pd" bottomMargin="3pd" rightMargin="3pd"
+					top="0" right="10pd" text="$Listen" fontSize="7" fontColor="Color200"/>
+			</group>
+			
+			<label text="[size=10]%title[/size]{'[size=6] (%serverDate)[/size]'}[size=7]\n$Provider  [/size][size=9][color=Color070]%provider[/color][/size]" 
+					fontColor="Color200" top="50pd" left="5pd" right="0" autoSize="1" wordWrap="1"/>
+			
+			<group left="0" right="0" top="110pd">
+				<label text="%description" fontSize="10" fontColor="Color200" left="5pd" right="0" autoSize="1" wordWrap="1" rtl="auto"/>
+			</group>
+		</group>
+
+	</form>
+</gui>

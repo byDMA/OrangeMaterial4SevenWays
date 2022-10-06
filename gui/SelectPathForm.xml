@@ -1,0 +1,63 @@
+﻿<gui>
+
+	<!--Дополнения - Опции - Место хранения - Настроить путь-->
+
+	<form id="SelectPathForm" sourceId="GUIForm">
+        <hotkey key="Back" command="gotoParent"/>
+		<button id="OKButton" sourceId="OKButton"/>
+		<button sourceId="BackButton"/>
+        <button sourceId="BackButton" picNormal="folder_label" command="" left="25pd" />
+			
+		<label id="PathLabel" fontSize="FontSize130" fontColor="Color070" left="55pd" top="1pd" right="37pd" height="35pd" autoSize="0" ellipsisPos="center" rtl="off"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+			
+		<listContainer id="List" left="1pd" right="1pd" top="38pd" bottom="55pd" rtl="off">
+				
+			<template id="Item" height="32pd">
+				<button id="Button" top="50%"/>
+				<label id="Label" ellipsisPos="center" top="50%" left="28pd" rtl="off"/>
+			</template>
+
+			<template id="SelectedItem" sourceId="LabelListSelectedItemGroup; Item">
+				<label id="Label" fontColor="Color210"/>
+			</template>
+
+			<template id="Disk" sourceId="Item">
+				<button id="Button" picNormal="disk" />
+			</template>
+
+			<template id="Folder" sourceId="Item">
+				<button id="Button" picNormal="folder"/>
+			</template>
+
+			<template id="File" sourceId="Item">
+				<button id="Button" picNormal="file"/>
+			</template>
+
+			<item id="Parent" sourceId="LabelListItemGroup; Item">
+				<label id="Label" left="2pd"/>
+			</item>
+
+			<item id="Disk" sourceId="LabelListItemGroup; Disk"/>
+			<selectedItem id="Disk" sourceId="Disk; SelectedItem"/>
+
+			<item id="Folder" sourceId="LabelListItemGroup; Folder"/>
+			<selectedItem id="Folder" sourceId="Folder; SelectedItem"/>
+
+			<item id="File" sourceId="LabelListItemGroup; File"/>
+			<selectedItem id="File" sourceId="File; SelectedItem"/>
+		</listContainer>
+	  
+        <!--название новой папки-->
+        
+		<edit id="FolderNameEdit" hint="$NewFolderHint" left="3pd" right="3pd" bottom="31pd" bgPics="" fontSize="FontSize130" bgColor="Color210" bgColorDisabled="Color030" fontColor="Color030" fontColorDisabled="Color210">
+            <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+            <hint colorActive="Color210" colorInactive="Color230" fontSize="FontSize130" />
+        </edit>    
+		
+        <!--кнопка CreateFolder -->
+        
+        <button id="CreateFolderButton" bgColor="Color070" bgColorDisabled="Color084" bgColorPressed="Color071"
+			fontColor="Color210" fontColorDisabled="Color230" fontSize="FontSize130" right="3pd" left="3pd" height="25pd" bottom="1pd" text="$CreateFolder"/>
+	</form>
+</gui>

@@ -1,0 +1,181 @@
+﻿<gui>
+		<!-- Индикаторы  -->		
+		<!-- по-умолчанию  -->
+		<indicator fontSize="12" fontColor="Color200"/>
+		<!-- индикатор движения по полосам (фон) -->
+		<indicator id="BlueFrameIndicator" leftMargin="2pd" rightMargin="2pd" topMargin="2pd" bottomMargin="2pd" bgColor="Color050"
+			bgPics="white_pix;white_pix;white_pix;white_pix;;white_pix;white_pix;white_pix;white_pix"/>
+		<!-- индикатор расстояния до спидкама -->
+		<indicator id="WhiteFrameIndicator" fontColor="black" autoSize="text" textPosition="center;center" 
+			bgPics="black_pix;black_pix;black_pix;black_pix;;black_pix;black_pix;black_pix;black_pix"
+			bgColor="Color210" leftMargin="1pd" rightMargin="1pd"/>
+		
+		<!-- индикаторы времени -->
+		<indicator id="MapZoomLevelIndicator" title="$MapZoomLevel"/>		
+		<indicator id="GPSTimeIndicator" title="$Time"/>
+		<indicator id="LocalTimeIndicator" title="$LocalTime"/>
+		<indicator id="SystemTimeIndicator" title="$SystemTime"/>
+		<indicator id="BaseTimeIndicator" title="$BaseTime"/>
+		
+		<!-- индикатор спутников -->
+		<indicator id="SatellitesIndicator" title="$Satellites"
+				fontColor="Color200" fontSize="5" columns="17" interval="2" numberLocation="bottom"
+				gpsTextBgColor="Color020" otherTextBgColor="Color020"
+				borderColor="Color210" emptyColor="Color210" validColor="Color100" invalidColor="Color080"/>		
+
+		<!-- индикатор ближайшего маневра  -->
+        <!-- <indicator id="TurnSchemeIndicator" title="$TurnScheme" fontSize="12" fontColor="Color210"  -->
+		<indicator id="TurnSchemeIndicator" title="$TurnScheme" fontSize="14" fontColor="Color210" textPosition="center;center"
+				picGoal="goal" picFinish="finish" picRoundabout="roundabout" picMoveForward="move_forward" picTurnBack="turn_back"
+				picTurnLeftForward="turn_left_forward" picTurnLeft="turn_left" picTurnLeftBack="turn_left_back"
+				picTurnRightForward="turn_right_forward" picTurnRight="turn_right" picTurnRightBack="turn_right_back"
+				searchingPics="frame_01; 20; frame_02; 20; frame_03; 20; frame_04; 20; frame_05; 20; frame_06; 20; frame_07; 20; frame_08; 20; frame_09; 20; frame_10; 20; frame_11; 20; frame_12; 20; frame_13; 20; frame_14; 20; frame_15; 20; frame_16; 20; frame_17; 20; frame_18; 20; frame_19; 20; frame_20; 20"
+		/>
+		<!-- индикатор второго маневра -->
+        <!-- <indicator id="SecondTurnIndicator" title="$SecondTurn" fontSize="6" fontColor="Color210" -->
+		<indicator id="SecondTurnIndicator" title="$SecondTurn" FontSize="FontSize110" fontColor="Color210" textPosition="center;center"
+			picGoal="goal_small" picFinish="finish_small" picRoundabout="roundabout_small" picMoveForward="move_forward_small" picTurnBack="turn_back_small"
+			picTurnLeftForward="turn_left_forward_small" picTurnLeft="turn_left_small" picTurnLeftBack="turn_left_back_small"
+			picTurnRightForward="turn_right_forward_small" picTurnRight="turn_right_small" picTurnRightBack="turn_right_back_small"
+		/>
+		<!--- индикатор движения по полосам --->
+		<indicator id="LanesIndicator" minLaneWidth="10pd"
+				picExpandLeft="lane_expand_left_sel" picExpandLeftSel="lane_expand_left_sel" picExpandLeftDim="lane_expand_left"
+				picExpandRight="lane_expand_right_sel" picExpandRightSel="lane_expand_right_sel" picExpandRightDim="lane_expand_right"
+				picMergeLeft="lane_merge_left_sel; 21" picMergeLeftSel="lane_merge_left_sel; 21" picMergeLeftDim="lane_merge_left; 21"
+				picMergeRight="lane_merge_right_sel; -7" picMergeRightSel="lane_merge_right_sel; -7" picMergeRightDim="lane_merge_right; -7"
+				picForward="lane_forward_sel" picForwardSel="lane_forward_sel" picForwardDim="lane_forward"
+				picSlightLeft="lane_slight_left_sel" picSlightLeftSel="lane_slight_left_sel" picSlightLeftDim="lane_slight_left"
+				picSlightLeftSmall="lane_slight_left_small_sel" picSlightLeftSmallSel="lane_slight_left_small_sel" picSlightLeftSmallDim="lane_slight_left_small"
+				picLeft="lane_left_sel" picLeftSel="lane_left_sel" picLeftDim="lane_left"
+				picLeftSmall="lane_left_small_sel" picLeftSmallSel="lane_left_small_sel" picLeftSmallDim="lane_left_small"
+				picSharpLeft="lane_sharp_left_sel" picSharpLeftSel="lane_sharp_left_sel" picSharpLeftDim="lane_sharp_left"
+				picSharpLeftSmall="lane_sharp_left_small_sel" picSharpLeftSmallSel="lane_sharp_left_small_sel" picSharpLeftSmallDim="lane_sharp_left_small"
+				picBackLeft="lane_back_left_sel" picBackLeftSel="lane_back_left_sel" picBackLeftDim="lane_back_left"
+				picBackLeftSmall="lane_back_left_small_sel" picBackLeftSmallSel="lane_back_left_small_sel" picBackLeftSmallDim="lane_back_left_small"
+				picSlightRight="lane_slight_right_sel" picSlightRightSel="lane_slight_right_sel" picSlightRightDim="lane_slight_right"
+				picSlightRightSmall="lane_slight_right_small_sel" picSlightRightSmallSel="lane_slight_right_small_sel" picSlightRightSmallDim="lane_slight_right_small"
+				picRight="lane_right_sel" picRightSel="lane_right_sel" picRightDim="lane_right"
+				picRightSmall="lane_right_small_sel" picRightSmallSel="lane_right_small_sel" picRightSmallDim="lane_right_small"
+				picSharpRight="lane_sharp_right_sel" picSharpRightSel="lane_sharp_right_sel" picSharpRightDim="lane_sharp_right"
+				picSharpRightSmall="lane_sharp_right_small_sel" picSharpRightSmallSel="lane_sharp_right_small_sel" picSharpRightSmallDim="lane_sharp_right_small"
+				picBackRight="lane_back_right_sel" picBackRightSel="lane_back_right_sel" picBackRightDim="lane_back_right"
+				picBackRightSmall="lane_back_right_small_sel" picBackRightSmallSel="lane_back_right_small_sel" picBackRightSmallDim="lane_back_right_small"
+				picSeparator="lane_separator"/>
+		
+		<!--- Индикатор спидкама --->
+		<indicator id="SpeedCamIndicator" width="52pd" height="52pd" tags="speedcam"
+				title="$SpeedCam" fontSize="FontSize320" fontColor="black"
+				
+				pic1="speedcam001"
+                pic2="speedcam002"
+                pic3="speedcam003"
+                pic4="speedcam004"
+                pic5="speedcam005"
+                pic7="speedcam007"
+                pic12="speedcam012"				
+				pic13="speedcam013"
+                pic14="speedcam014"
+                pic16="speedcam016"
+                pic040="speedcam040"
+				pic041="speedcam041"
+                pic051="speedcam051"
+                pic052="speedcam052"
+                pic053="speedcam053"
+                pic054="speedcam054"
+                pic065="speedcam065"
+				pic068="speedcam068"
+                pic075="speedcam075"
+				pic100="speedcam100"
+                pic101="speedcam101"
+                pic102="speedcam102"
+                pic103="speedcam103"
+                pic104="speedcam104"
+                pic105="speedcam105"
+                pic106="speedcam106"
+				pic107="speedcam107"
+                pic127="speedcam127"
+				pic192="speedcam192"
+                pic193="speedcam193"
+				pic194="speedcam194"	
+				pic198="speedcam198"	
+				pic199="speedcam199"
+				pic200="speedcam200"
+                pic201="speedcam201"
+				pic202="speedcam202"
+				pic203="speedcam203"				
+				pic204="speedcam204"
+                pic206="speedcam206"
+				pic207="speedcam207"
+				pic208="speedcam208"	
+				pic209="speedcam209"	
+				pic210="speedcam210"	
+				pic211="speedcam211"			
+				pic212="speedcam212"			
+				pic213="speedcam213"
+				pic215="speedcam215"
+				pic222="speedcam222"
+				pic223="speedcam223"	
+				pic227="speedcam227"	
+				pic231="speedcam231"
+				pic232="speedcam232"
+				pic233="speedcam233"
+				pic234="speedcam234"
+				pic235="speedcam235"
+				pic237="speedcam237"
+                
+             
+                pic2100="speedcam2100"
+                pic666="speedcam666"
+             />
+        
+        
+        
+		<indicator id="TrackIndicator1" fontSize="FontSize160" bgColor="Color020" bgColorPressed="Color021" autosize="text"/>
+		<indicator id="TrackIndicator2" fontSize="FontSize160" bgColor="Color021" bgColorPressed="Color020" autosize="text"/>
+
+		<indicator id="DistanceTotalIndicator" title="$DistanceTotalTitle" sourceId="TrackIndicator1" format="[color=Color071][b]%value[/b][/color]\n$DistanceTotal"/>
+		<indicator id="DistanceTotalIndicator1" title="$DistanceTotalTitle A" sourceId="TrackIndicator1" format="[color=Color071][b]%value[/b][/color]\n$DistanceTotal\n[b]A[/b]"/>
+		<indicator id="DistanceMovingIndicator1" title="$DistanceMovingTitle A" sourceId="TrackIndicator1" format="[color=Color071][b]%value[/b][/color]\n$DistanceMoving\n[b]A[/b]"/>
+		<indicator id="DistanceTrafficIndicator1" title="$DistanceTrafficTitle A" sourceId="TrackIndicator1" format="[color=Color071][b]%value[/b][/color]\n$DistanceTraffic\n[b]A[/b]"/>
+		<indicator id="TimeTotalIndicator1" title="$TimeTotalTitle A" sourceId="TrackIndicator1" format="[color=Color071][b]%value[/b][/color]\n$TimeTotal\n[b]A[/b]"/>
+		<indicator id="TimeMovingIndicator1" title="$TimeMovingTitle A" sourceId="TrackIndicator1" format="[color=Color071][b]%value[/b][/color]\n$TimeMoving\n[b]A[/b]"/>
+		<indicator id="TimeTrafficIndicator1" title="$TimeTrafficTitle A" sourceId="TrackIndicator1" format="[color=Color071][b]%value[/b][/color]\n$TimeTraffic\n[b]A[/b]"/>
+		<indicator id="TimeStopIndicator1" title="$TimeStopTitle A" sourceId="TrackIndicator1" format="[color=Color071][b]%value[/b][/color]\n$TimeStop\n[b]A[/b]"/>
+		<indicator id="MaxSpeedIndicator1" title="$MaxSpeedTitle A" sourceId="TrackIndicator1" format="[b]%value $kmh[/b]\n$MaxSpeed\n[b]A[/b]"/>
+		<indicator id="AvgSpeedIndicator1" title="$AvgSpeedTitle A" sourceId="TrackIndicator1" format="[b]%value $kmh[/b]\n$AvgSpeed\n[b]A[/b]"/>
+		<indicator id="DistanceTotalIndicator2" title="$DistanceTotalTitle B" sourceId="TrackIndicator2" format="[color=Color071][b]%value[/b][/color]\n$DistanceTotal\n[b]B[/b]"/>
+		<indicator id="DistanceMovingIndicator2" title="$DistanceMovingTitle B" sourceId="TrackIndicator2" format="[color=Color071][b]%value[/b][/color]\n$DistanceMoving\n[b]B[/b]"/>
+		<indicator id="DistanceTrafficIndicator2" title="$DistanceTrafficTitle B" sourceId="TrackIndicator2" format="[color=Color071][b]%value[/b][/color]\n$DistanceTraffic\n[b]B[/b]"/>
+		<indicator id="TimeTotalIndicator2" title="$TimeTotalTitle B" sourceId="TrackIndicator2" format="[color=Color071][b]%value[/b][/color]\n$TimeTotal\n[b]B[/b]"/>
+		<indicator id="TimeMovingIndicator2" title="$TimeMovingTitle B" sourceId="TrackIndicator2" format="[color=Color071][b]%value[/b][/color]\n$TimeMoving\n[b]B[/b]"/>
+		<indicator id="TimeTrafficIndicator2" title="$TimeTrafficTitle B" sourceId="TrackIndicator2" format="[color=Color071][b]%value[/b][/color]\n$TimeTraffic\n[b]B[/b]"/>
+		<indicator id="TimeStopIndicator2" title="$TimeStopTitle B" sourceId="TrackIndicator2" format="[color=Color071][b]%value[/b][/color]\n$TimeStop\n[b]B[/b]"/>
+		<indicator id="MaxSpeedIndicator2" title="$MaxSpeedTitle B" sourceId="TrackIndicator2" format="[b]%value $kmh[/b]\n$MaxSpeed\n[b]B[/b]"/>
+		<indicator id="AvgSpeedIndicator2" title="$AvgSpeedTitle B" sourceId="TrackIndicator2" format="[b]%value $kmh[/b]\n$AvgSpeed\n[b]B[/b]"/>
+
+		<trackIndicator sourceId="PicMenuSmallButton" width="75pd" height="65pd" fontSize="FontSize160" rtl="on" textPosition="center;center"/>
+
+        <!--- Индикатор ? keine Ahnung, wo das ist, aber angepasst --->
+        <menu id="IndicatorMenu" orientation="vert" size="1" visible="0" bgPics="greyFrame">
+			<button sourceId="QuickMenuCaption" text="$Indicator" bgPics="orangeUnderline" command="show(TrackComputerForm);show(TrackComputerForm); goBack"/>
+			<button id="IndicatorMenuChoose" sourceId="QuickMenuButton" text="$ChooseIndicator" picNormal="select_indicator" command="chooseIndicator"/>
+			<button id="IndicatorMenuReset" sourceId="QuickMenuButton" text="$ResetIndicator" picNormal="erase_indicator" command="resetIndicator"/>
+			<button id="IndicatorMenuRemove"  sourceId="QuickMenuButton" text="$RemoveIndicator" picNormal="delete" command="removeIndicator"/>
+			
+		</menu>
+        
+        
+        
+	<!--- <menu id="IndicatorMenu" sourceId="PopupMenu">
+		<button id="IndicatorMenuChoose" sourceId="PopupMenuButton" text="$ChooseIndicator" command="chooseIndicator"/>
+		<button id="IndicatorMenuReset" sourceId="PopupMenuButton" text="$ResetIndicator" command="resetIndicator"/>
+		<button id="IndicatorMenuRemove" sourceId="PopupMenuButton" text="$RemoveIndicator" command="removeIndicator"/>
+	</menu>
+        --->
+	
+	<!--- Индикатор компаса --->
+	<indicator id="CompassIndicator" 
+		pics="compass_000;compass_005;compass_010;compass_015;compass_020;compass_025;compass_030;compass_035;compass_040;compass_045"
+		picsAngleStep="5" command="toggleMapRotation"/>
+</gui>

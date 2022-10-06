@@ -1,0 +1,34 @@
+﻿<gui>
+	
+	<!--Окно активации-->
+
+	<form id="ActivationForm" sourceId="GUIForm">
+		<button text="$Attention" sourceId="TitleButton"/>
+		<button sourceId="BackButton"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+		
+		<group left="1pd" right="1pd" top="38pd" bottom="1pd" bgColor="Color020">
+		
+			<group left="3pd" right="3pd" top="3pd" bottom="40pd">
+				<label left="0" right="0" wordWrap="1" autoSize="1" text=
+					"{'[size=10]$ActivationImpossible[/size]'(!%requestFile, !%activation);"
+
+					"'[size=10]%message[/size]'}\n"
+						 
+					"{'[size=8]\n$Provider[/size]\n"
+					"[size=10][color=Color071]    %provider[/color][/size]'}"
+						 
+					"{'[size=8]\n$EncryptedFiles[/size]\n"
+					"[size=8][color=Color071]     %files[/color][/size]'}"/>
+			</group>
+		
+			<group left="3pd" right="3pd" bottom="3pd" height="25pd">
+				<template id="Button" sourceId="TextButton" bgColor="Color070" bgColorPressed="Color071" fontSize="FontSize130" autosize="text" height="100%" width="32%" top="0"/>
+				<button sourceId="Button" text="$CreateRequestFile" right="0" command="request" tags="requestFile" bgColorDisabled="Color084"/>
+				<button sourceId="Button" text="$Activation" right="50%" command="activation" tags="activation" bgColorDisabled="Color084"/>
+				<button sourceId="Button" text="$Feedback" left="0" command="feedback" tags="feedback" bgColorDisabled="Color084"/>
+			</group>
+		</group>
+	</form>
+	
+</gui>

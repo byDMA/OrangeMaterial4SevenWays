@@ -1,0 +1,60 @@
+﻿<gui>
+	<!--Дополнения - Каталог-->
+
+	<form id="AddonsListForm" sourceId="GUIForm">
+		<button sourceId="BackButton"/>
+		<button sourceId="ShowMapButton"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+		<label fontSize="FontSize120" left="37pd" right="37pd" height="35pd" top="0pd" autoSize="0" ellipsisPos="center"
+				text="{'[command=gotoLevel(0)]$AddonsRoot[/command]'(%level1)}"
+					"{' > [command=gotoLevel(1)]%level1[/command]'(%level2); ' > %level1'}"
+					"{' > [command=gotoLevel(2)]%level2[/command]'(%level3); ' > %level2'}"
+					"{' > [command=gotoLevel(3)]%level3[/command]'(%level4); ' > %level3'}"
+					"{' > %level4'}"/>
+					
+		<label left="37pd" right="37pd" height="35pd" top="0pd" fontSize="FontSize120" autoSize="0" ellipsisPos="center" tags="!level1" text="$AddonsRoot"/>
+		
+        
+        <!--Suchfeld-->
+        <button  left="20pd" width="18pd" height="18pd" top="38pd" picNormal="further_search_frameless" bgColor="Color210" bgPics=""/>
+        <edit id="FilterEdit" top="38pd" height="18pd" left="38pd" right="2pd" bgPics="" fontSize="FontSize130" bgColor="Color210" bgColorDisabled="Color030" fontColor="Color030" fontColorDisabled="Color210" hint="$FilterHint">
+			<button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+            <hint colorActive="Color210" colorInactive="Color230" fontSize="FontSize130" />
+        </edit>
+        <!--Suchfeld Ende-->
+	
+		<listContainer id="List" left="1pd" right="1pd" top="63pd" bottom="1pd" visible="1" >
+			<template id="Folder">
+				<button id="Button" left="0" top="50%"/>
+				<label id="Label" ellipsisPos="right" left="28pd" right="0" top="50%"/>
+			</template>
+
+         
+			<item id="Type" sourceId="LabelListItemGroup; Folder">
+				<button id="Button" picNormal="folder"/>
+				<label id="Label" fontSize="FontSize220" text="%title"/>
+			</item>
+			<selectedItem id="Type" sourceId="LabelListSelectedItemGroup; Folder">
+				<button id="Button" picNormal="folder"/>
+				<label id="Label" fontSize="FontSize220" text="%title"/>
+			</selectedItem>
+            
+            
+        
+            
+			<item id="Address" sourceId="LabelListItemGroup; Folder">
+				<button id="Button" picNormal="folder"/>
+				<label id="Label" fontSize="FontSize220" text="%title"/>
+			</item>
+			<selectedItem id="Address" sourceId="LabelListSelectedItemGroup; Folder">
+				<button id="Button" picNormal="folder"/>
+				<label id="Label" fontSize="FontSize220" text="%title"/>
+			</selectedItem>
+
+			<item id="Addon" sourceId="LabelListItemGroup; AddonListItem"/>
+			<selectedItem id="Addon" sourceId="LabelListSelectedItemGroup; AddonListItemSelect" />
+
+		</listContainer>
+		<label id="DownloadingLabel" sourceId="DownloadingLabel"/>
+	</form>
+</gui>

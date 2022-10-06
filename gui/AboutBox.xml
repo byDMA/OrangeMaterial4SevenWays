@@ -1,0 +1,27 @@
+﻿<gui>
+
+	<!--О программе-->
+	
+	<dialog id="AboutBox" left="0" right="0" top="0" bottom="0" sourceId="GUIForm">
+		
+        <button sourceId="BackButton"/>
+		<button text="$About" sourceId="TitleButton" right="75pd"/>
+		<button sourceId="ShowMapButton" />
+        <button sourceId="AboutKeysButton" right="35pd" />
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+        
+		<label left="35pd" top="42pd" FontSize="FontSize110" text="NameSkin" />
+        <label left="35pd" top="55pd" FontSize="FontSize110" text="SkinPPI" />
+        <button picNormal="Logo_OM" left="2pd" top="42pd"/>
+        
+        <button bgPics="greyUnderline" left="2pd" right="2pd" top="70pd" />
+        
+        <group id="AboutGroup" left="2pd" right="2pd" top="75pd" bottom="1pd" >
+            <button picNormal="navikey_logo_OM" left="2pd"/>
+            
+            <label id="AboutLabel" left="2pd" right="2pd" wordWrap="1" rtl="auto"/>
+        </group>
+        
+        
+	</dialog>
+</gui>

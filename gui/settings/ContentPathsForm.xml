@@ -1,0 +1,37 @@
+﻿<gui>
+	
+	<!--Опции - Карты - Выбор карт - Папки с картами-->
+	
+	<form id="ContentPathsForm" sourceId="GUIForm">
+		<button sourceId="BackButton"/>
+		<button sourceId="TitleButton" text="$MapsPath"/>
+		<button sourceId="OKButton"/>
+        <button sourceId="PlusButton" id="AddPathButton" right="35pd" />
+        
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+			
+		<listContainer id="MapsPathsList" sourceId="LabelList" left="1pd" right="1pd" top="38pd" bottom="1pd" rtl="off">
+			
+            <item height="40pd" leftMargin="0">
+				<button id="Picture" left="1pd" top="50%" width="28pd" height="20pd" picNormal="maps_local_path"/>
+                <label id="Label" ellipsisPos="center" rtl="off" left="30pd" top="50%" right="20pd"/>
+			</item>
+			
+            <selectedItem height="40pd" leftMargin="0">
+                <button id="Picture" left="1pd" top="50%" width="28pd" height="20pd" picNormal="maps_local_path" />
+				<label id="Label" ellipsisPos="center" rtl="off" left="30pd" top="50%" fontColor="Color070" right="20pd"/>
+			</selectedItem>
+            
+            <!-- delete map folder path (visible only if activated) -->
+            <button id="DelPathButton" sourceId="ListItemLargeButton" right="4pd"
+					bgColor="Color082" bgColorPressed="Color081" picNormal="garbage" picPosition="center;center" showMode="selected"/>
+            
+            
+		</listContainer>
+			
+		
+		
+
+	</form>
+
+</gui>

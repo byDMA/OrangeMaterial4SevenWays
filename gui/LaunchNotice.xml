@@ -1,0 +1,10 @@
+﻿<gui>
+
+	<!--Начальное предупреждение об использовании программы-->
+	
+	<dialog id="LaunchNotice" left="0" right="0" top="0" bottom="0" bgColor="Color020">
+		<button fontSize="7" left="20pd" right="20pd" top="20pd" bottom="72pd" textPosition="center;top" wordWrap="1" text="$LaunchNotice" fontColor="Color200"/>
+		<checkBox id="CheckBox" sourceId="UsualCheckBox" text="$DontShowAgain" bottom="32pd" left="20pd" right="20pd" fontSize="FontSize140"/>
+		<button sourceId="TextButton" left="50%" bottom="10pd" text="$Agree" command="ok"/>
+	</dialog>
+</gui>

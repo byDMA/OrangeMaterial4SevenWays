@@ -1,0 +1,45 @@
+﻿<gui>
+	<!--Дополнения - Опции-->
+
+	<form id="AddonsSettingsForm" sourceId="GUIForm">
+		<button sourceId="TitleButton" text="$ContentSettings"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+		<group left="1pd" right="1pd" top="38pd" bottom="1pd" bgColor="Color020">
+			<!--разрешить использование мобильного интернета-->
+			<checkBox id="UseCellularCheck" sourceId="SettingsCheckBox" text="$UseCellular" wordWrap="1" autoSize="text"/>
+			<ifnot os="iOS; RT">
+				
+				<!--хранить дополнения (настройка папки)-->
+                <button id="FolderAddonIcon" picPosition="center;center" width="25pd" height="25pd"
+						top="42pd" left="0pd" picNormal="folder_content"/>
+			
+                <group right="2pd" left="2pd" height="60pd" top="50pd">
+					                    
+                    <label text="$ContentPath" top="0pd" left="25pd"/>
+                    
+					<button id="ContentPathButton" bgColor="Color040" bgColorPressed="Color041" picPosition="center;center" width="40pd" height="40pd"
+						top="15pd" right="0" picNormal="change"/>					
+					<button bgColor="Color021" fontColor="Color400" fontSize="FontSize130" text="%addonsPath" 
+							right="40pd" left="0" height="40pd" top="15pd" rightMargin="5pd" wordWrap="1" autoSize="text" bgPics="greyFrame"/>
+				</group>
+				
+				<!--хранить пользовательские данные (настройка папки)-->
+                
+                <button id="FolderUserIcon" picPosition="center;center" width="25pd" height="25pd"
+						top="112pd" left="0pd" picNormal="folder_user"/>
+				
+                <group right="2pd" left="2pd" height="60pd" top="120pd">
+					<label text="$UserDataPath" top="0pd" left="25pd"/>
+					
+                    <button id="UserDataPathButton" bgColor="Color040" bgColorPressed="Color041" picPosition="center;center" width="40pd" height="40pd"
+						top="15pd" right="0" picNormal="change"/>					
+					<button bgColor="Color021" fontColor="Color400" fontSize="FontSize130" text="%userDataPath" 
+							right="40pd" left="0" height="40pd" top="15pd" rightMargin="5pd" wordWrap="1" autoSize="text" bgPics="greyFrame"/>
+				</group>			
+				
+			</ifnot>
+		</group>
+    <button sourceId="OKButton"/>
+	<button sourceId="BackButton"/>
+  </form>
+</gui>

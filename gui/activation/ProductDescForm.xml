@@ -1,0 +1,27 @@
+﻿<gui>
+
+	<!--Информация о подписке-->
+		
+	<form id="ProductDescForm" sourceId="GUIForm">
+		<button sourceId="BackButton"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+
+		<group left="37pd" right="8pd" top="0" height="36pd">
+			<template id="Button" sourceId="TextButton" top="50%" width="49%" height="25pd" bgColor="Color070" bgColorPressed="Color071" autosize="text" fontSize="FontSize140"/>
+			<button sourceId="Button" text="$Purchase" right="0" command="purchase" tags="canPurchase"/>
+			<button sourceId="Button" text="$Download" left="0" command="showAddons" tags="!premiumProduct"/>
+		</group>
+
+		<group bgColor="Color020" leftMargin="1pd" rightMargin="1pd" topMargin="1pd" bottomMargin="1pd"
+				left="5pd" right="5pd" top="45pd" bottom="5pd">
+			<label text="{'$SubsCanceled'(%canceled); '$PurchaseActive'(%active); '$ProductNotPurchased'}\n%purchaseDate" top="3pd" fontSize="FontSize130" fontColor="FontSize130" left="5pd" rtl="auto"/>
+			<button bgColor="Color200" left="5pd" right="5pd" top="35pd" height="1"/>
+			<label text="[b]%title\n[/b]%comment" fontSize="FontSize130" fontColor="Color200" top="40pd" left="5pd" right="0" autoSize="1" wordWrap="1" rtl="auto"/>
+			<label text="%price" fontSize="FontSize130" fontBold="1" fontColor="Color220" top="3pd" right="5pd" rtl="auto"/>
+			<button bgColor="Color200" left="5pd" right="5pd" top="145pd" height="1"/>
+			<label text="%description" top="150pd" fontSize="FontSize130" fontColor="Color200" left="5pd" right="0" autoSize="1" wordWrap="1" rtl="auto"/>
+		</group>
+
+	</form>
+	
+</gui>

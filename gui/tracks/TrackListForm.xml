@@ -1,0 +1,89 @@
+﻿<gui>
+	
+	<!-- Список треков -->
+	
+	<form id="TrackListForm" sourceId="GUIForm">
+		
+		<button text="$TrackList" right="70pd" sourceId="TitleButton"/>
+		<button sourceId="BackButton"/>
+		<button sourceId="ShowMapButton"/>
+        <button sourceId="Menu" right="35pd"  picNormal="more" command="show(More)"/>
+		<button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+        
+        <!-- buttons for toggle options 
+        
+-->
+        <group left="5pd" right="5pd" top="38pd" height="56pd">
+			            
+            <button text="$TrackMapShowOrder:" left="2pd" width="45%" top="0" height="28pd" fontSize="FontSize221" textPosition="left;center" autosize="text" />
+            <button picNormal="select_up_d; select_up" right="0" top="0" height="28pd" width="54%" picPosition="right;center" textPosition="left;center" id="ToggleVisibleFirstButton" bgColor="Color040" text="$TrackMapShowOrderUnsorted|$TrackMapShowOrderActivFirst" fontSize="FontSize220" autosize="text" fontColor="Color400" bgPics="" state="%visibleFirst" command="toggleVisibleFirst" rtl="on"/>
+            
+            <button text="$ThenUseRules" left="2pd" width="45%" top="28pd" height="28pd" fontSize="FontSize221" textPosition="left;center" autosize="text" fontColor="Color071" />
+            <button picNormal="sorting_az; sorting_date" right="0" top="28pd" height="28pd" width="54%" picPosition="right;center" textPosition="left;center" id="ToggleSortModeButton" bgColor="Color040" text="$ByName|$ByDate" fontSize="FontSize220" autosize="text" fontColor="Color400" bgPics="" state="%sortMode" command="toggleSortMode" rtl="on" />
+            
+		</group>
+        
+        
+        <button bgPics="greyUnderline" left="2pd" right="2pd" top="97pd" />
+        
+		<listContainer id="List" left="1pd" right="1pd" top="98pd" bottom="1pd">
+
+			<template id="Indicator">
+				<indicator id="TrackColorIndicator" picTrack="color_track_indicator_small" picArrow="way_track_indicator_small" 
+					right="3pd" width="8pd" height="30pd" top="50%"/>
+			</template>
+			
+			<!-- трек-регистратор -->
+			<template id="RecorderItem">
+				<label id="Header" left="35pd" right="10pd" top="0pd" text="$TrackRecorder" fontSize="10"/>
+				<label id="Info" left="38pd" top="15pd" right="10pd" fontSize="6" text=
+						"{'$TrackRecorderWritePeriodInList %writePeriod'; '$Off'} "
+						"{'(%date-...)'; '($NoData)'}\n"						
+						"{'$TrackRecorderShowPeriodInList %showPeriod {'(%length)'}' (%showPeriod)}"/>
+			</template>			
+			
+			<item id="Recorder" sourceId="RecorderItem; Indicator; ListItemGroup" height="44pd">
+				<label id="Header" fontColor="Color200"/>
+				<label id="Info" fontColor="Color070"/>
+			</item>
+			
+			<selectedItem id="Recorder" sourceId="RecorderItem; ListSelectedItemGroup" height="44pd">
+				<label id="Header" fontColor="Color210"/>
+				<label id="Info" fontColor="Color070"/>
+			</selectedItem>
+
+			<!-- треки -->
+			<template id="TrackItem">
+				<label id="Header" left="35pd" right="10pd" top="0" fontSize="FontSize220" text="%fileName"/>
+				<label id="Label" left="35pd" right="10pd" top="18pd" fontSize="FontSize221" text="%date %time  (%length)"/>
+			</template>
+			
+			<item id="Track" sourceId="LabelListItemGroup; Indicator; TrackItem">
+				<label id="Header" fontColor="Color200"/>
+				<label id="Label" fontColor="Color230"/>
+			</item>
+			
+			<selectedItem id="Track" sourceId="LabelListSelectedItemGroup; TrackItem">
+				<label id="Header" fontColor="Color210"/>
+				<label id="Label" fontColor="Color210"/>
+			</selectedItem>
+
+			<button id="VisibleButton" picNormal="cb_off;cb_on" left="5pd" height="100%" width="30pd" showMode="always"/>
+
+			<button id="ParamsButton" sourceId="ListItemLargeButton" right="36pd"  
+					bgColor="Color082" bgColorPressed="Color081" picNormal="settings_small" showMode="selected"/>
+
+			<button id="DeleteButton" sourceId="ListItemLargeButton" right="4pd"
+					bgColor="Color082" bgColorPressed="Color081" picNormal="garbage" showMode="selected"/>
+		</listContainer>
+		
+		<!--- дополнительное меню --->
+		<dialog id="More" sourceId="MoreMenu" bgPics="greyFrame" >
+			<button sourceId="QuickMenuCaption" top="0" text="$Settings" bgPics="orangeUnderline" command="show(TrackSettingsForm);goBack"/>
+			<button sourceId="QuickMenuButton" top="30pd" text="$LoadTrack" picNormal="load_track" command="loadTrack"/>
+			<button sourceId="QuickMenuButton" top="60pd" text="$DeleteAllTracks" picNormal="delete_all" command="goBack; deleteAll"/>
+			<button sourceId="QuickMenuButton" top="90pd" text="$TrackSettings" picNormal="settings_small" command="show(TrackSettingsForm)"/>
+		</dialog>		
+		
+	</form>
+</gui>

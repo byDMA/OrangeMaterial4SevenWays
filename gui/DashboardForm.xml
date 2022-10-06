@@ -1,0 +1,129 @@
+﻿<gui>
+
+	<!---панель приборов 1 (стандартная) --->
+	
+	<form id="DashboardForm" bgColor="black">
+  
+		<group left="0" right="0" top="0" bottom="0">
+		<!--- Батарея | GPS --->
+            <indicator id="BatteryIndicator" picNormal="battery_0; battery_40; battery_70; battery_100; battery_ch" state="%battery" right="2pd" top="0pd" height="26pd" />	
+            <button id="MapGPSState" picNormal="gps_off; gps_off; gps_bad; gps_valid" top="0pd" right="18pd" height="26pd" state="%gpsState" />
+			<!---верхний левый угол --->
+			<group top="0" left="0" width="60%" height="60%"> 
+				
+				<!--- ближайший маневр --->
+				<group left="30%" top="50%" width="100pd" height="120pd" tags="route">
+					<indicator id="TurnSchemeIndicator" fontColor="Color210" fontSize="22" left="50%" bottom="35pd" width="88pd" height="84pd"
+						picGoal="goal" picFinish="finish" picRoundabout="roundabout_db" picMoveForward="move_forward_db" picTurnBack="turn_back_db"
+						picTurnLeftForward="turn_left_forward_db" picTurnLeft="turn_left_db" picTurnLeftBack="turn_left_back_db"
+						picTurnRightForward="turn_right_forward_db" picTurnRight="turn_right_db" picTurnRightBack="turn_right_back_db"
+						searchingPics="frame_01; 20; frame_02; 20; frame_03; 20; frame_04; 20; frame_05; 20; frame_06; 20; frame_07; 20; frame_08; 20; frame_09; 20; frame_10; 20; frame_11; 20; frame_12; 20; frame_13; 20; frame_14; 20; frame_15; 20; frame_16; 20; frame_17; 20; frame_18; 200; frame_19; 20; frame_20; 20"/>
+					<button text="%turnDistance" left="50%" bottom="0" width="100%" height="30pd" autoSize="text" fontSize="23" fontColor="Color085"/>
+				</group>
+				
+				<!--- текущая скорость (если не проложен маршрут) --->                                     
+				<button text="%currentSpeed" left="50%" top="40%" width="95%" height="80%"  autoSize="text" fontColor="Color210" wordWrap="0" fontSize="80" tags="!route"/>
+                
+                <label text="$kmh" bottom="5%" left="50%" fontSize="10" fontColor="Color210" tags="!route"/>
+				
+				<!--- ограничение скорости (если не проложен маршрут) --->
+				<button picNormal="speedcam101_1" text="%speedLimit" layout="center" top="" right="0" width="45pd" height="45pd" fontColor="black" fontSize="10" tags="speedLimit; !route"/>
+			
+				<!--- второй маневр и расстояние до него --->
+                <!--- <indicator id="SecondTurnIndicator" title="$SecondTurn" top="2pd" right="0pd" width="55pd" height="50pd" fontSize="12" fontColor="Color210" picPosition="center;center" --->
+				<indicator id="SecondTurnIndicator" title="$SecondTurn" top="2pd" right="0pd" width="55pd" height="50pd" fontSize="14" fontColor="Color210" picPosition="center;center"
+               
+					picGoal="goal" picFinish="finish" picRoundabout="roundabout" picMoveForward="move_forward" picTurnBack="turn_back"
+					picTurnLeftForward="turn_left_forward" picTurnLeft="turn_left" picTurnLeftBack="turn_left_back"
+					picTurnRightForward="turn_right_forward" picTurnRight="turn_right" picTurnRightBack="turn_right_back" tags="route; auto; secondTurn"
+					/>				
+				<!--- <button text="%secondTurnDistAfterFirst" top="50pd" right="0pd" width="55pd" height="25pd" fontSize="12" --->
+                <button text="%secondTurnDistAfterFirst" top="50pd" right="0pd" width="55pd" height="25pd" fontSize="14" fontColor="Color400"
+					textPosition="center;center" autoSize="text" tags="route; auto; secondTurn"/>
+			</group>
+			
+			<!--- движение по полосам --->
+			<group top="0" left="0" width="60%" height="60%">
+				<indicator sourceId="LanesIndicator" right="2pd" bottom="2pd" tags="lanes"/>
+			</group>
+			
+			<!---верхний правый угол --->
+			<group top="0" right="0" width="40%" height="60%">
+				
+				<group top="0" right="0" width="100%" height="50%">
+					<group top="0" right="50%" width="95%" height="50%">
+						<!--- текущее время --->
+						<indicator id="BaseTimeIndicator" left="50%" width="100%" height="100%" fontSize="22" autoSize="text" fontColor="Color210"/>
+                        
+					</group>				
+					<group bottom="0" right="50%" width="95%" height="50%">
+						<!--- расстояние до конечной точки --->
+						<button text="%finishDistance" left="50%" width="100%" height="100%" fontSize="22" autoSize="text" fontColor="Color210" tags="route"/>
+					</group>					
+				</group>
+				
+				<group bottom="0" right="0" width="100%" height="50%">
+					<group top="0" right="50%" width="95%" height="50%">
+						<!--- осталось времени до прибытия в конечную точку --->
+						<button text="%finishTimeLeft" left="50%" width="100%" height="100%" fontSize="22" autoSize="text" fontColor="Color070" tags="route"/>
+					</group>				
+					<group bottom="0" right="50%" width="95%" height="50%">
+						<!--- время прибытия в конечную точку --->
+						<button text="%finishTime" fontSize="22" fontColor="Color210" left="50%" width="100%" height="100%" autoSize="text" tags="route"/>
+					</group>
+				</group>					
+			</group>
+
+			<!---нижний левый угол --->
+			<group bottom="0" left="0" width="45%" height="40%"> 
+				<!--- текущая скорость (если проложен маршрут) --->
+				<button text="%currentSpeed" width="100%" left="50%" bottom="50%" height="70%" fontSize="70" fontColor="Color210" autoSize="text" tags="route"/>
+                <button text="%currentSpeed" width="100%" left="50%" bottom="50%" height="95%" fontSize="70" fontColor="Color210" autoSize="text" bgColor="Color080" tags="speedLimitState"/>
+				<label text="$kmh" bottom="1%" left="50%" fontColor="Color210" fontSize="12" tags="route"/>
+				<!--- ограничение скорости (если проложен маршрут) --->
+				<button picNormal="speedcam101_1" text="%speedLimit" layout="center" top="0" right="0" width="45pd" height="45pd" fontColor="black" fontSize="10" tags="speedLimit; route"/>
+			</group>
+
+			<!---нижний правый угол --->
+			<group bottom="0" right="0" width="55%" height="40%"> 
+				<group bottom="0" left="0" width="50%" height="100%">
+					<group bottom="50%" left="50%" width="90%" height="80pd">
+						<!--- спидкам --->
+						<indicator sourceId="SpeedCamIndicator" left="50%" top="0" width="52pd" height="52pd" fontColor="black" fontSize="14" tags="speedcam; auto"/>
+						<!--- расстояние до спидкама  --->
+						<button text="%speedCamDistance" left="50%" bottom="0" width="100%" height="28pd" fontColor="Color210" fontSize="18" autoSize="text" tags="speedcam; auto"/>
+					</group>
+				</group>
+				<group bottom="0" right="0" width="50%" height="100%">				
+					<group bottom="50%" left="50%" width="90%" height="80pd">
+						<!--- изменение скорости--->
+						<button picNormal="speedcam101" left="50%" top="0" width="52pd" height="52pd" text="%nextSpeedLimit" layout="center" fontColor="black" fontSize="14" tags="nextSpeedLimit"/>
+						<!--- расстояние до изменения скорости--->
+						<button text="%nextSpeedLimitDist" left="50%" bottom="0" width="100%" height="28pd" fontColor="Color210" fontSize="18" autoSize="text" tags="nextSpeedLimit"/>
+					</group>
+				</group>
+			
+			</group>			
+		</group>
+		
+		<!--- линии --->
+		<button bgColor="Color121" right="2%" height="1pd" width="38%" top="15%"/>
+		<button bgColor="Color121" right="2%" height="1pd" width="38%" top="30%"/>
+		<button bgColor="Color121" right="2%" height="1pd" width="38%" top="45%"/>
+		
+		<button bgColor="Color121" right="50%" height="1pd" width="98%" bottom="40%"/>
+		<button bgColor="Color121" left="60%" top="2%" height="58%" width="1pd"/>
+		<button bgColor="Color121" left="45%" bottom="2%" height="38%" width="1pd"/>	
+			
+		<button width="100%" height="100%" top="0" command="toggleHUD(0); show(DashboardMenu)"/>
+		
+		<!--- меню при нажатии на экран --->
+		<dialog id="DashboardMenu" left="50%" top="50%" >
+			<button sourceId="QuickMenuCaption" top="0" text="$Dashboard" bgPics="orangeUnderline" command="show(DashboardForm); goBack"/>
+			<button sourceId="QuickMenuButton" top="30pd" bgColor="Color010" bgColorPressed="Color021" text="$HUD" picNormal="hud" command="toggleHUD; goBack"/>
+			<button sourceId="QuickMenuButton" top="60pd" bgColor="Color010" bgColorPressed="Color021" text="$Dashboard 2" picNormal="dashboard" command="goBack; goBack;  show(DashboardForm2)"/>
+			<button sourceId="QuickMenuButton" top="90pd" bgColor="Color010" bgColorPressed="Color021" text="$Close" picNormal="close" command="goBack; goBack"/>
+		</dialog>
+        
+	</form>
+</gui>

@@ -1,0 +1,106 @@
+﻿<gui>
+	<!-- Изменить маршрут -->
+
+	<form id="RouteForm" sourceId="GUIForm"
+			picStart="start_small" picPosition="my_position" picGoal="goal_small" picFinish="finish_small" picRoundabout="roundabout_small" picMoveForward="move_forward_small" picTurnBack="turn_back_small"
+			picTurnLeftForward="turn_left_forward_small" picTurnLeft="turn_left_small" picTurnLeftBack="turn_left_back_small"
+			picTurnRightForward="turn_right_forward_small" picTurnRight="turn_right_small" picTurnRightBack="turn_right_back_small">
+
+		<button sourceId="TitleButton" text="[picture=route_label] $Route (%finishDistance / %finishTimeLeft)" right="70pd" wordWrap="1"/>
+			
+		<button sourceId="BackButton"/>
+		<button sourceId="ShowMapButton"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+		
+		<listContainer id="RouteList" left="1pd" right="1pd" top="38pd" bottom="1pd">
+			
+			<template id="Goal">
+				<button id="Picture" bgColor="Color040" width="32pd" height="32pd" layout="center"/>
+				<label id="Label" left="36pd" right="2pd" fontSize="FontSize220"/>
+			</template>
+
+			<template id="Turn" height="34pd">
+				<group id="Group">
+					<button id="Picture" bgColor="Color040" fontSize="6" fontColor="Color210" top="50%" left="3pd" width="28pd" height="28pd" layout="center"/>
+					<label left="36pd" right="2pd" fontSize="FontSize220" text="{'%title';'%roadType (%roadDirection)'}\n[size=FontSize221][color=Color230]%distanceTo[/color][/size]"/>
+				</group>
+			</template>
+
+			<template id="TurnSelected" height="34pd">
+				<group id="Group">
+					<button id="Picture" bgColor="Color040" fontSize="6" fontColor="Color210" top="50%" left="3pd" width="28pd" height="28pd" layout="center"/>
+					<label left="36pd" right="2pd" fontSize="FontSize220" fontColor="Color210" text="{'%title';'%roadType (%roadDirection)'}\n[size=FontSize221][color=Color210]%distanceTo[/color][/size]"/>
+				</group>
+			</template>			
+			
+			<item id="Turn" sourceId="ListSubItemGroup, Turn"/>
+			<selectedItem id="Turn" sourceId="ListSelectedSubItemGroup, TurnSelected"/>
+			
+			<item id="NoTurns" sourceId="ListSubItemGroup" height="30pd">
+				<group id="Group">
+				  <label left="5pd" top="50%" text="$NoTurns" fontSize="FontSize140"/>
+				</group>
+			</item>
+
+			<item id="Exact" sourceId="LabelListItemGroup, Goal">
+				<label id="Label" text="%title\n[size=FontSize221]%city, [color=Color220]%distanceTo[/color][/size]"/>
+			</item>
+
+			<selectedItem id="Exact" sourceId="LabelListSelectedItemGroup, Goal">
+				<label id="Label" text="%title\n[size=FontSize221]%city, [color=Color210]%distanceTo[/color][/size]"/>
+			</selectedItem>
+
+			<item id="Near" sourceId="LabelListItemGroup, Goal">
+				<label id="Label" text="$CloseTo %title\n[size=FontSize221]%city, [color=Color220]%distanceTo[/color][/size]"/>
+			</item>
+
+			<selectedItem id="Near" sourceId="LabelListSelectedItemGroup, Goal">
+				<label id="Label" text="$CloseTo %title\n[size=FontSize221]%city, [color=Color210]%distanceTo[/color][/size]"/>
+			</selectedItem>
+
+			<item id="Far" sourceId="LabelListItemGroup, Goal">
+				<label id="Label" text="%distance $From %title\n[size=FontSize221]%city, [color=Color220]%distanceTo[/color][/size]"/>
+			</item>
+
+			<selectedItem id="Far" sourceId="LabelListSelectedItemGroup, Goal">
+				<label id="Label" text="%distance $From %title\n[size=FontSize221]%city, [color=Color210]%distanceTo[/color][/size]"/>
+			</selectedItem>
+			
+			<button id="ExpandButton" picNormal="expand_label; expand_label_p" 
+				top="50%" width="36pd" height="32pd" picPosition="right;bottom" state="%expanded" showMode="always"/>
+
+            <!-- right="4pd" + 32pd (Background) + 32pd (Background) = 68pd -> Schalter sind dicht beieinander, damit kein langer Text durchkommt -->
+			<button id="UpButton" sourceId="ListItemLargeButton" right="68pd"
+					bgColor="Color082" bgColorPressed="Color081" bgColorDisabled="Color230" picNormal="up" showMode="selected"/>
+			<!-- right="4pd" + 32pd (Background) = 36pd -> Schalter sind dicht beieinander, damit kein langer Text durchkommt -->
+            <button id="DownButton" sourceId="ListItemLargeButton" right="36pd"
+					bgColor="Color082" bgColorPressed="Color081" bgColorDisabled="Color230" picNormal="down" showMode="selected"/>
+			<!-- right="4pd" -->
+            <button id="DeleteButton" sourceId="ListItemLargeButton" right="4pd" 
+					bgColor="Color082" bgColorPressed="Color081" picNormal="garbage" showMode="selected"/>
+					
+		</listContainer>
+
+        <!--- ikona "more", bo dialog a nie menu z nawigacji --->
+		<button sourceId="Menu" right="35pd" picNormal="more" command="show(MoreRouteMenu)"/>
+
+		<!--- дополнительное меню --->
+		<dialog id="MoreRouteMenu" sourceId="MoreMenu" bgPics="greyFrame">			
+			
+            <button sourceId="QuickMenuCaption" top="0" text="$Route" bgPics="orangeUnderline" command="show(RouteForm);show(RouteForm);goBack" />
+            <button sourceId="QuickMenuButton" top="30pd" text="$Cancel" picNormal="del_route" command="delRoute"/>
+			<button sourceId="QuickMenuButton" top="60pd" text="$Save" picNormal="save_route" command="show(SavedRouteForm)"/>
+			<button sourceId="QuickMenuButton" top="90pd" text="$AddGoal" picNormal="add_goal" command="show(EditRoadMenu)"/>			
+			<button sourceId="QuickMenuButton" top="120pd" text="$ShowEntireRouteButton" picNormal="show_route" command="showEntireRoute"/>			
+			<checkBox sourceId="QuickMenuToggle" top="150pd" text="$Simulation" picUnchecked="simulation" picChecked="simulation_off" command="toggleSimulation"/>
+		</dialog>
+		
+		<!--- добавить цель --->
+		<dialog id="EditRoadMenu" sourceId="MoreMenu" bgPics="greyFrame">				
+			<button sourceId="QuickMenuCaption" text="$AddGoal" top="0" bgPics="orangeUnderline" command="show(RouteForm);show(RouteForm);goBack"/>
+			<button sourceId="QuickMenuButton" text="$Search" top="30pd" picNormal="find2" command="show(SearchForm)"/>				
+			<button sourceId="QuickMenuButton" text="$Map" top="60pd" picNormal="map_button_route" command="show(SearchMapForm)"/>
+		</dialog>
+	
+	</form>
+</gui>

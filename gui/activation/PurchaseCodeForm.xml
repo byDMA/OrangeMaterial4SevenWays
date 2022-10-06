@@ -1,0 +1,45 @@
+﻿<gui>
+	
+	<!--Окно для ввода кода покупки, активации, или перехода к покупке из программы-->
+
+	<form id="PurchaseCodeForm" sourceId="GUIForm">
+		<!--<button text="$Activation" sourceId="TitleButton"/>-->
+		<button sourceId="BackButton"/>
+        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
+
+        <group left="37pd" right="3pd" top="4pd" height="28pd">
+                <template id="Button" sourceId="TextButton" bgColor="Color070" bgColorPressed="Color071" fontSize="FontSize130" autosize="text" height="100%" width="49%" top="0pd"/>
+				
+				<!--отправить код-->
+				<button sourceId="Button" text="$SendPurchaseCode" right="0" command="sendCode"/>
+				
+                <!--купить
+				В окне ActivationForm удалены ключевые слова feature, purchases, команда market 1.7.156
+                https://navikey.ru/wiki/doku.php?id=ru:skin:gui:history&s[]=market
+                -->
+				<!--<button sourceId="Button" text="$Purchase" right="50%" command="market" tags="market"/>-->
+				
+                <!--восстановить покупки-->
+				<button sourceId="Button" text="$RestorePurchases" left="0" command="restorePurchases"/>
+			</group>
+        
+		<group left="1pd" right="1pd" top="38pd" bottom="1pd" bgColor="Color020">
+		
+			<group left="3pd" right="3pd" top="3pd" bottom="56pd">
+				<label left="20pd" right="15pd" top="0" wordWrap="1" fontSize="FontSize120" autoSize="1" text="$PurchaseCodeHint"/>
+				<!--поле для ввода кода-->
+                <button sourceId="TitleButton" picNormal="key_label" picPosition="left;center" left="2pd" right="2pd" top="33pd"  />
+				
+                
+                <edit id="Edit" top="35pd" height="30pd" left="20pd" right="15pd" bgPics="" fontSize="FontSize130" bgColor="Color210" bgColorDisabled="Color030" fontColor="Color030" fontColorDisabled="Color210" hint="$FilterHint">
+			    <button right="0pd" width="18pd" bgColor="Color010" picNormal="clearedit" picPressed="clearedit_p"/>
+                
+                <hint colorActive="Color210" colorInactive="Color230" fontSize="FontSize130" />
+        </edit>
+        
+			</group>
+
+			
+		</group>
+	</form>
+</gui>
