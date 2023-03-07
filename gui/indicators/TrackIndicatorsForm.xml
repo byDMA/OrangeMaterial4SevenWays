@@ -1,9 +1,0 @@
-﻿<gui>
-	<!--Выбор индикатора-->
-	<form id="TrackIndicatorsForm" sourceId="GUIForm">
-		<button sourceId="BackButton"/>
-		<button sourceId="TitleButton" text="$SelectIndicator"/>
-        <button bgPics="orangeUnderline" left="0" right="0" top="35pd" />
-		<listBox id="TrackIndicatorsList" left="1pd" right="1pd" top="38pd" bottom="1pd"/>
-	</form>
-</gui>
